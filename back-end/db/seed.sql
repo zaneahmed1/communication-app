@@ -24,7 +24,7 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('People', 'Dad', 'Dad', 'https://cdn-icons-png.flaticon.com/512/5438/5438933.png'),
 ('People', 'I', 'I', 'https://i.postimg.cc/pVY0DbY5/me.png'),
 ('People', 'You', 'You', 'https://cdn-icons-png.flaticon.com/512/2121/2121106.png'),
-('People', 'She', 'She', 'https://cdn-icons-png.flaticon.com/512/2784/2784481.png'),
+('People', 'She', 'She', 'https://i.postimg.cc/nrspPybv/teacher.png'),
 ('People', 'He', 'He', 'https://cdn-icons-png.flaticon.com/512/2825/2825307.png'),
 ('People', 'People', 'People', 'https://cdn-icons-png.flaticon.com/512/554/554775.png'),
 ('Actions', 'Eat', 'Eat', 'https://cdn-icons-png.flaticon.com/512/3572/3572701.png'),
@@ -51,7 +51,7 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('Time/Date', 'Today', 'Today', 'https://cdn-icons-png.flaticon.com/512/2489/2489295.png'),
 ('Time/Date', 'Tomorrow', 'Tomorrow', 'https://cdn-icons-png.flaticon.com/512/6133/6133506.png'),
 ('Time/Date', 'Yesterday', 'Yesterday', 'https://cdn-icons-png.flaticon.com/512/4285/4285655.png'),
-('Time/Date', 'Time', 'Time', 'https://cdn-icons-png.flaticon.com/512/2972/2972531.png'),
+('Time/Date', 'Time', 'Time', 'https://cdn-icons-png.flaticon.com/512/2972/2972528.png'),
 ('Time/Date', 'Day', 'Day', 'https://cdn-icons-png.flaticon.com/512/2773/2773274.png'),
 ('Time/Date', 'Month', 'Month', 'https://cdn-icons-png.flaticon.com/512/9514/9514676.png'),
 ('Time/Date', 'Year', 'Year', 'https://cdn-icons-png.flaticon.com/512/9109/9109237.png');
