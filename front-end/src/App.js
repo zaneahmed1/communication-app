@@ -9,6 +9,7 @@ import ThingsButtons from "./Components/ThingsButtons"
 import TimeDateButtons from "./Components/TimeDateButtons"
 import ActionsButtons from "./Components/ActionsButtons"
 import ChatButtons from "./Components/ChatButtons";
+import PeopleButtons from "./Components/PeopleButtons";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/home" element={<HomeButtons buttons={buttons}/>} />
+            <Route path="/people" element={<PeopleButtons buttons={buttons}/>} />
             <Route path="/questions" element={<QuestionsButtons buttons={buttons}/>} />
             <Route path="/things" element={<ThingsButtons buttons={buttons}/>} />
             <Route path="/timedate" element={<TimeDateButtons buttons={buttons}/>} />

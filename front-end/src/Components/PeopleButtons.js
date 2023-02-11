@@ -2,16 +2,15 @@ import React, {useState} from 'react'
 import ButtonCard from './ButtonCard'
 
 
-export default function HomeButtons({buttons}) {
+export default function PeopleButtons({buttons}) {
 
 
-  let homeButtons =  buttons.filter(button=>button.button_category === "Home")
+  let peopleButtons =  buttons.filter(button=>button.button_category === "People")
   
 
   return (
     <div>
-      <h1>Title</h1>
-    {homeButtons.map((button) => {
+    {peopleButtons.map((button) => {
       return <ButtonCard key={button.id} button={button}/>
     })}
     </div>

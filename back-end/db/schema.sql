@@ -7,5 +7,6 @@ CREATE TABLE buttons (
     button_category TEXT,
     button_label TEXT,
     button_message TEXT,
-    button_image VARCHAR(2083)
+    button_image VARCHAR(2083),
+    button_navigate TEXT
 )
