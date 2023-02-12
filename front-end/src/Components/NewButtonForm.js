@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function NewButtonForm() {
 
-  const navigate = useNavigate();
-
   const [button, setButton] = useState({
     button_category: "",
     button_label: "",
@@ -15,16 +13,10 @@ export default function NewButtonForm() {
     button_naviagte: "",
   });
 
-const addButton = (newButton) => {
+const addButton = (button) => {
     axios
-    .post(`${API}/buttons`, newButton)
-    .then(
-      () => {
-        navigate(`/buttons`);
-      },
-      (error) => console.error(error)
-    )
-      .catch((c) => console.warn("catch", c));
+    .post(`${API}/buttons`, button)
+    .then((res) => setButton(res.value));
 }
 
 const handleTextChange = (event) => {
@@ -40,7 +32,7 @@ const handleTextChange = (event) => {
   <div className="newForm">
 <form onSubmit={handleSubmit}>
     <label for="button_category">Category:</label>
-    <select name="button_category" id="button_category">
+    <select name="button_category" value={button.button_category} onChange={handleTextChange}>
     <option value="Home">Home</option>
     <option value="People">People</option>
     <option value="Questions">Questions</option>
@@ -49,10 +41,16 @@ const handleTextChange = (event) => {
     <option value="Chat">Chat</option>
     <option value="Time/Date">Time/Date</option>
     </select>
-    <label>Label:</label>
-    <input
+    <label for="button_label">Label:</label>
+    <input value={button.button_label} type="text" onChange={handleTextChange}
     />
-
+     <label for="button_message">Message:</label>
+    <input value={button.button_message} type="text" onChange={handleTextChange}
+    />
+     <label for="button_image">Image:</label>
+    <input value={button.button_image} type="text" placeholder="https://..." onChange={handleTextChange}
+    />
+<button type="submit">Submit</button>
 </form>
   </div>);
 }

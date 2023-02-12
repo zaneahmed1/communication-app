@@ -1,0 +1,58 @@
+.home{
+    width: 100vw;
+    height: 100vh;
+    background-color: #6FD5FE;
+    display: flex;
+    flex-direction: row;
+    max-height: 100vh;
+    overflow: hidden;
+
+    &__left{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+        &__logo img{
+            height: 250px;
+        }
+
+        &__image{
+            margin-left: 30%;
+            transform: rotate(-18deg);
+        }
+        &__image img{
+            height: 500px;
+        }
+    &__right{
+       justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    &__text{
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+        text-align: center;
+    }
+    &__text h4{
+        font-weight: 50;
+    }
+    &__button button{
+        font-family: 'Roboto', sans-serif;
+        font-size: 25px;
+        cursor: pointer;
+        height: 70px;
+        width: 110px;
+        border-radius: 15px;
+        text-align: center;
+        background-color: #FFC533;
+        border: solid 1px black;
+    }
+    &__button button:hover{
+        background-color: rgba(255, 255, 255, 0.705);
+        transition: 0.8s;
+    }
+}
