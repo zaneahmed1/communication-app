@@ -17,13 +17,30 @@
         &__logo img{
             height: 250px;
         }
-
         &__image{
-            margin-left: 30%;
             transform: rotate(-18deg);
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            border: 5px dashed rgb(0, 0, 0);
+            margin-left: 40%;
+            margin-top: 25%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+           
+            &__wrapper{
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                background-color: #19beff62;
+                border-radius: 50%;
+                height: 440px;
+                width: 440px;
+            }
         }
         &__image img{
-            height: 500px;
+            height: 300px;
         }
     &__right{
        justify-content: center;
@@ -33,12 +50,13 @@
         flex: 1;
     }
     &__text{
+        background-color: #6FD5FE;
         font-family: 'Roboto', sans-serif;
         font-size: 30px;
         text-align: center;
     }
     &__text h4{
-        font-weight: 50;
+        font-weight: 10;
     }
     &__button button{
         font-family: 'Roboto', sans-serif;
@@ -54,5 +72,68 @@
     &__button button:hover{
         background-color: rgba(255, 255, 255, 0.705);
         transition: 0.8s;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+    .home{
+        background-color: #6FD5FE;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    
+        &__left{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+            &__logo img{
+                height: 160px;
+            }
+    
+            &__image{
+                margin-left: 10%;
+                transform: rotate(-18deg);
+                margin-top: 100%;
+            }
+            &__image img{
+                height: 200px;
+            }
+        &__right{
+           justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        &__text{
+            font-size: 20px;
+            text-align: center;
+        }
+        &__text h1{
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 100;
+        }
+        &__text h4{
+            font-weight: 50;
+            font-family: 'Roboto', sans-serif;
+        }
+        &__button button{
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+            cursor: pointer;
+            height: 70px;
+            width: 110px;
+            border-radius: 15px;
+            text-align: center;
+            background-color: #FFC533;
+            border: solid 1px black;
+        }
+        &__button button:hover{
+            background-color: rgba(255, 255, 255, 0.705);
+            transition: 0.8s;
+        }
     }
 }
