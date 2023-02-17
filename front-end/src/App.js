@@ -11,6 +11,8 @@ import ActionsButtons from "./Components/ActionsButtons"
 import ChatButtons from "./Components/ChatButtons";
 import PeopleButtons from "./Components/PeopleButtons";
 import NewButtonForm from "./Components/NewButtonForm";
+import Login from "./Components/Login";
+import { UserProvider } from "./Providers/UserProvider";
 
 
 function App() {
@@ -28,9 +30,11 @@ function App() {
 
   return (
     <div className="App">
+      <UserProvider>
       <Router>
           <Routes>
             <Route path="/" element={<Home/>} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/home" element={<HomeButtons buttons={buttons}/>} />
             <Route path="/people" element={<PeopleButtons buttons={buttons}/>} />
             <Route path="/questions" element={<QuestionsButtons buttons={buttons}/>} />
@@ -41,6 +45,7 @@ function App() {
             <Route path="/new" element={<NewButtonForm/>}/>
           </Routes>
       </Router>
+      </UserProvider>
 
     </div>
   );
