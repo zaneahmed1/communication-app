@@ -16,24 +16,9 @@ function VerifyEmail({setExistingUser, existingUser}) {
   const navigate = useNavigate()
 
 
-    const addUser = async () => {
-      if(currentUser?.emailVerified){
-        axios
-        .post(`${API}/users`, {...existingUser, uuid: currentUser.uid})
-            .then(res => {
-              if(res.data.payload.uuid){
-                setExistingUser(res.data.payload)
-                navigate("/profile")
-              }
-            })
-      }
-    }
-
-
   useEffect(() => {
     const interval = setInterval(() => {
       currentUser?.reload()
-      addUser()
       .then(() => {
         if(currentUser?.emailVerified){
           // setExistingUser({...existingUser, uuid: currentUser.uid})
@@ -44,7 +29,7 @@ function VerifyEmail({setExistingUser, existingUser}) {
           //   lastname: currentUser.displayName,
           //   photourl: currentUser.photoURL}))
           clearInterval(interval)
-          console.log(currentUser, existingUser)
+          navigate('/profile')
         }
       })
     }, 1000)

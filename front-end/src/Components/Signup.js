@@ -5,6 +5,7 @@ import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/au
 import {useAuthValue} from './AuthContext'
 import axios from 'axios'
 
+
 const API = process.env.REACT_APP_API_URL;
 
 function Signup({setExistingUser, existingUser}) {
@@ -14,7 +15,8 @@ function Signup({setExistingUser, existingUser}) {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
   const navigate = useNavigate()
-  const {setTimeActive} = useAuthValue()
+  const {setTimeActive, currentUser} = useAuthValue()
+
 
   const validatePassword = () => {
     let isValid = true
@@ -26,6 +28,18 @@ function Signup({setExistingUser, existingUser}) {
     }
     return isValid
   }
+     const addUser = async () => {
+      if(currentUser?.emailVerified){
+        axios
+        .post(`${API}/users`, {...existingUser, uuid: currentUser.uid})
+            .then(res => {
+              if(res.data.payload.uuid){
+                setExistingUser(res.data.payload)
+                navigate("/profile")
+              }
+            })
+      }
+    }
 
   const register = e => {
     e.preventDefault()
@@ -35,6 +49,7 @@ function Signup({setExistingUser, existingUser}) {
         createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
           sendEmailVerification(auth.currentUser) 
+          addUser()
           .then(() => {
             setTimeActive(true)
         
@@ -43,6 +58,7 @@ function Signup({setExistingUser, existingUser}) {
         })
         .catch(err => setError(err.message))
     }
+
     setEmail('')
     setPassword('')
     setConfirmPassword('')

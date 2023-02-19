@@ -46,14 +46,6 @@ function App() {
         
         onAuthStateChanged(auth, (user) => {
           setCurrentUser(user)
-          setExistingUser({
-            uuid: currentUser.uid,
-            email: currentUser.email,
-            firstname: currentUser.displayName,
-            lastname: currentUser.displayName,
-            photourl: currentUser.photoURL,
-          })
-         
         })
       }, []);
 
