@@ -12,8 +12,8 @@ export default function QuestionsButtons({buttons, searchInput, setSearchInput})
 console.log(dataToDisplay)
   if (searchInput) {
     dataToDisplay = questionsButtons.filter((button) => {
-      const label = button.button_label[0].toLowerCase()
-      return label.includes(searchInput[0].toLowerCase());
+      const label = button.button_label.toLowerCase()
+      return label.includes(searchInput.toLowerCase());
     });
   }
 
