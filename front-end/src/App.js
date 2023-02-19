@@ -29,6 +29,13 @@ function App() {
   const [buttons, setButtons] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
   const [timeActive, setTimeActive] = useState(false)
+  const [existingUser, setExistingUser] = useState({
+    uuid: "",
+    email: "",
+    firstname: "",
+    lastname: "",
+    photourl: "",
+  })
 
 
   useEffect(() => {
@@ -39,8 +46,23 @@ function App() {
         
         onAuthStateChanged(auth, (user) => {
           setCurrentUser(user)
+          setExistingUser({
+            uuid: currentUser.uid,
+            email: currentUser.email,
+            firstname: currentUser.displayName,
+            lastname: currentUser.displayName,
+            photourl: currentUser.photoURL,
+          })
+         
         })
-    }, []);
+      }, []);
+
+// const addUser = (existingUser) => {
+//   axios
+//   .post(`${API}/users`, existingUser)
+//   .then((res) => setExistingUser(res))
+//   .catch((e) => console.error("catch", e));
+// }
 
   return (
     <div className="App">
@@ -48,11 +70,11 @@ function App() {
       <AuthProvider value={{currentUser, timeActive, setTimeActive}}>
           <Routes>
             <Route path="/" element={<Home/>} />
-            <Route exact path='/' element={
+            {/* <Route exact path='/' element={
             <PrivateRoute>
               <Profile path="/profile"/>
             </PrivateRoute>
-          }/>
+          }/> */}
             <Route path="/login" element={
             !currentUser?.emailVerified 
             ? <Login/>
@@ -60,7 +82,7 @@ function App() {
           } />
           <Route path="/signup" element={
             !currentUser?.emailVerified 
-            ? <Signup/>
+            ? <Signup />
             : <Navigate to='/' replace/>
           } />
             <Route path="/home" element={<HomeButtons buttons={buttons}/>} />
@@ -71,7 +93,8 @@ function App() {
             <Route path="/actions" element={<ActionsButtons buttons={buttons}/>} />
             <Route path="/chat" element={<ChatButtons buttons={buttons}/>} />
             <Route path="/new" element={<NewButtonForm/>}/>
-            <Route path='/verify-email' element={<VerifyEmail/>} /> 
+            <Route path='/verify-email' element={<VerifyEmail setExistingUser={setExistingUser} existingUser={existingUser}/>} /> 
+            <Route path='/profile' element={<Profile/>} /> 
           </Routes>
       </AuthProvider>
       </Router>

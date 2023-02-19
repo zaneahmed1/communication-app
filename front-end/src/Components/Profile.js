@@ -1,10 +1,17 @@
 import {useAuthValue} from './AuthContext'
 import { signOut } from 'firebase/auth' 
 import { auth } from '../Services/Firebase'
+import {useNavigate} from 'react-router-dom'
 
 
 function Profile() {
   const {currentUser} = useAuthValue()
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    signOut(auth)
+    navigate('/login')
+  }
 
   return (
       <div className='center'>
@@ -15,7 +22,7 @@ function Profile() {
             <strong>Email verified: </strong>
             {`${currentUser?.emailVerified}`}
           </p>
-          <span onClick={() => signOut(auth)}>Sign Out</span>
+          <button onClick={handleClick}>Sign Out</button>
         </div>
       </div>
   )

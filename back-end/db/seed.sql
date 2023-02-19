@@ -67,8 +67,8 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('Time/Date', 'Home', 'Home', 'https://i.postimg.cc/mk65x7r1/home.png', 'na'),
 ('Time/Date', 'Clear', 'Clear', 'https://cdn-icons-png.flaticon.com/512/3602/3602448.png', 'na');
 
-
-
+INSERT INTO users ("uuid", "email", "firstname", "lastname", "photourl") VALUES
+('wBRz4XOd8nTanqD0C9QRlo52u603','zaneahmed@pursuit.org', 'Zane','Ahmed', 'https://media.licdn.com/dms/image/D4E03AQEozdVZBWW2Jw/profile-displayphoto-shrink_800_800/0/1674008585991?e=1681948800&v=beta&t=Y6CYN2LgrsY26pKLdyUD7IMjctsnr6_J_Jc1AV-zax8') ;
 
 
 

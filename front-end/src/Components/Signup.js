@@ -1,10 +1,13 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import {auth} from '../Services/Firebase'
 import {useNavigate, Link} from 'react-router-dom'
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {useAuthValue} from './AuthContext'
+import axios from 'axios'
 
-function Register() {
+const API = process.env.REACT_APP_API_URL;
+
+function Signup({setExistingUser, existingUser}) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -31,9 +34,10 @@ function Register() {
       // Create a new user with email and password using firebase
         createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
-          sendEmailVerification(auth.currentUser)   
+          sendEmailVerification(auth.currentUser) 
           .then(() => {
             setTimeActive(true)
+        
             navigate('/verify-email')
           }).catch((err) => alert(err.message))
         })
@@ -43,6 +47,7 @@ function Register() {
     setPassword('')
     setConfirmPassword('')
   }
+
 
   return (
     <div className='center'>
@@ -82,4 +87,4 @@ function Register() {
   )
 }
 
-export default Register
+export default Signup

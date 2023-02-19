@@ -22,10 +22,10 @@ users.get("/", async (req, res) => {
 });
 
 // Read (Singular/Specific ID)
-users.get("/:user_id", async (req, res) => {
-  const { user_id } = req.params;
-  const user = await getUser(user_id);
-  if (user.user_id) {
+users.get("/:uuid", async (req, res) => {
+  const { uuid } = req.params;
+  const user = await getUser(uuid);
+  if (user.uuid) {
     res.json({ payload: user, success: true });
   } else {
     res.status(404).json({
@@ -35,33 +35,13 @@ users.get("/:user_id", async (req, res) => {
     });
   }
 });
-
-// CAN FIND SPECIFIC USER/EMAIL THROUGH GET REQUEST
-
-// users.get("/:user_id/bells", async (req, res) => {
-//   const { user_id, bell_id } = req.params;
-//   const usersBells = await getAllBellsForUser(user_id, bell_id);
-//   res.json(usersBells);
-// });
-
-// users.post("/:user_id/bells/:bell_id", async (req, res) => {
-//   const { user_id, bell_id } = req.params;
-//   const successfulAdd = await addNewBellForUser(user_id, bell_id);
-//   if (successfulAdd) {
-//     res.status(201).json({ message: "Bell for user created!" });
-//   } else {
-//     res.status(422).json({ error: "unprocessable entity" });
-//   }
-// });
-
 // Create
 users.post("/", async (req, res) => {
   const { body } = req;
   // ONLY a successful post will return an object with a key of id
-  console.log(req.body);
   try {
     const createdUser = await createUser(body);
-    if (createdUser.user_id) {
+    if (createdUser.uuid) {
       res.status(200).json({
         success: true,
         payload: createdUser,
@@ -78,14 +58,14 @@ users.post("/", async (req, res) => {
 });
 
 // Update
-users.put("/:user_id", async (req, res) => {
-  const { user_id } = req.params;
+users.put("/:uuid", async (req, res) => {
+  const { uuid } = req.params;
 
-  body.user_id = body;
+  body.uuid = body;
 
-  const updatedUser = await updateUser(req.body, user_id);
+  const updatedUser = await updateUser(req.body, uuid);
   console.log(updatedUser);
-  if (updatedUser.user_id) {
+  if (updatedUser.uuid) {
     res.status(200).json(updatedUser);
   } else {
     res.status(404).json({ error: "user not found" });
@@ -94,9 +74,9 @@ users.put("/:user_id", async (req, res) => {
 
 // Delete
 users.delete("/:id", async (req, res) => {
-  const { user_id } = req.params;
-  const deletedUser = await deleteUser(user_id);
-  if (deletedUser.user_id) {
+  const { uuid } = req.params;
+  const deletedUser = await deleteUser(uuid);
+  if (deletedUser.uuid) {
     res.status(200).json({ payload: deletedUser, success: true });
   } else {
     res.status(404).json({ payload: "User not found", success: false });

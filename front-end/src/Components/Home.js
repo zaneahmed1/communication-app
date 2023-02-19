@@ -1,7 +1,8 @@
 import React from 'react'
 import {useNavigate} from "react-router-dom"
-import chat from "../../src/ipad.png"
+import ipad from "../../src/ipad.png"
 import logo from "../../src/logo.png"
+import chat from "../../src/chat.png"
 import "../Components/Home.scss"
 
 export default function Home() {
@@ -18,7 +19,7 @@ export default function Home() {
       <div className='home__image'>
         <div className='home__image__wrapper' >
 
-    <img src={chat} alt="chat-image"/>
+    <img src={ipad} alt="ipad-image"/>
       </div>
         </div>
       </div>

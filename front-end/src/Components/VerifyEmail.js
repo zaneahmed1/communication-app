@@ -3,25 +3,49 @@ import {useState, useEffect} from 'react'
 import {auth} from '../Services/Firebase'
 import {sendEmailVerification} from 'firebase/auth'
 import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
-function VerifyEmail() {
+
+const API = process.env.REACT_APP_API_URL;
+
+function VerifyEmail({setExistingUser, existingUser}) {
 
   const {currentUser} = useAuthValue()
   const [time, setTime] = useState(60)
   const {timeActive, setTimeActive} = useAuthValue()
   const navigate = useNavigate()
 
+
+    const addUser = async () => {
+      if(currentUser?.emailVerified){
+        axios
+        .post(`${API}/users`, {...existingUser, uuid: currentUser.uid})
+            .then(res => {
+              if(res.data.payload.uuid){
+                setExistingUser(res.data.payload)
+                navigate("/profile")
+              }
+            })
+      }
+    }
+
+
   useEffect(() => {
     const interval = setInterval(() => {
       currentUser?.reload()
+      addUser()
       .then(() => {
         if(currentUser?.emailVerified){
+          // setExistingUser({...existingUser, uuid: currentUser.uid})
+          // setExistingUser({...existingUser, email: currentUser.email})
+          // setExistingUser(existingUser =>({...existingUser, uuid: currentUser.uid,
+          //   email: currentUser.email,
+          //   firstname: currentUser.displayName,
+          //   lastname: currentUser.displayName,
+          //   photourl: currentUser.photoURL}))
           clearInterval(interval)
-          navigate('/profile')
+          console.log(currentUser, existingUser)
         }
-      })
-      .catch((err) => {
-        alert(err.message)
       })
     }, 1000)
   }, [navigate, currentUser])
