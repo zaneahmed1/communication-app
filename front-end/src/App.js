@@ -27,6 +27,7 @@ function App() {
   const API = process.env.REACT_APP_API_URL;
 
   const [buttons, setButtons] = useState([])
+  const [searchInput, setSearchInput] = useState('');
   const [currentUser, setCurrentUser] = useState(null)
   const [timeActive, setTimeActive] = useState(false)
   const [existingUser, setExistingUser] = useState({
@@ -77,13 +78,13 @@ function App() {
             ? <Signup />
             : <Navigate to='/' replace/>
           } />
-            <Route path="/home" element={<HomeButtons buttons={buttons}/>} />
-            <Route path="/people" element={<PeopleButtons buttons={buttons}/>} />
-            <Route path="/questions" element={<QuestionsButtons buttons={buttons}/>} />
-            <Route path="/things" element={<ThingsButtons buttons={buttons}/>} />
-            <Route path="/timedate" element={<TimeDateButtons buttons={buttons}/>} />
-            <Route path="/actions" element={<ActionsButtons buttons={buttons}/>} />
-            <Route path="/chat" element={<ChatButtons buttons={buttons}/>} />
+            <Route path="/home" element={<HomeButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
+            <Route path="/people" element={<PeopleButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/> } />
+            <Route path="/questions" element={<QuestionsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
+            <Route path="/things" element={<ThingsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
+            <Route path="/timedate" element={<TimeDateButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
+            <Route path="/actions" element={<ActionsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
+            <Route path="/chat" element={<ChatButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
             <Route path="/new" element={<NewButtonForm/>}/>
             <Route path='/verify-email' element={<VerifyEmail setExistingUser={setExistingUser} existingUser={existingUser}/>} /> 
             <Route path='/profile' element={<Profile/>} /> 

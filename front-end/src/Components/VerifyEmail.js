@@ -15,12 +15,27 @@ function VerifyEmail({setExistingUser, existingUser}) {
   const {timeActive, setTimeActive} = useAuthValue()
   const navigate = useNavigate()
 
+  const addUser = async () => {
+    if(currentUser?.emailVerified){
+      axios
+      .post(`${API}/users`, {...existingUser, uuid: currentUser?.uid})
+          .then(res => {
+            if(res.data.payload.uuid){
+              setExistingUser(res.data.payload)
+              navigate("/profile")
+              console.log(existingUser)
+            }
+          })
+    }
+  }
+
 
   useEffect(() => {
     const interval = setInterval(() => {
       currentUser?.reload()
       .then(() => {
         if(currentUser?.emailVerified){
+          addUser()
           // setExistingUser({...existingUser, uuid: currentUser.uid})
           // setExistingUser({...existingUser, email: currentUser.email})
           // setExistingUser(existingUser =>({...existingUser, uuid: currentUser.uid,

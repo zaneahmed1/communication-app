@@ -20,26 +20,27 @@ function Signup({setExistingUser, existingUser}) {
 
   const validatePassword = () => {
     let isValid = true
-    if (password !== '' && confirmPassword !== ''){
+
       if (password !== confirmPassword) {
         isValid = false
         setError('Passwords does not match')
       }
-    }
+
     return isValid
   }
-     const addUser = async () => {
-      if(currentUser?.emailVerified){
-        axios
-        .post(`${API}/users`, {...existingUser, uuid: currentUser.uid})
-            .then(res => {
-              if(res.data.payload.uuid){
-                setExistingUser(res.data.payload)
-                navigate("/profile")
-              }
-            })
-      }
-    }
+    //  const addUser = async () => {
+    //   if(currentUser?.emailVerified){
+    //     axios
+    //     .post(`${API}/users`, {...existingUser, uuid: currentUser.uid})
+    //         .then(res => {
+    //           if(res.data.payload.uuid){
+    //             setExistingUser(res.data.payload)
+    //             navigate("/profile")
+    //             console.log(existingUser)
+    //           }
+    //         })
+    //   }
+    // }
 
   const register = e => {
     e.preventDefault()
@@ -49,10 +50,9 @@ function Signup({setExistingUser, existingUser}) {
         createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
           sendEmailVerification(auth.currentUser) 
-          addUser()
+          // addUser()
           .then(() => {
             setTimeActive(true)
-        
             navigate('/verify-email')
           }).catch((err) => alert(err.message))
         })
