@@ -1,7 +1,7 @@
 import React from 'react'
 import {useNavigate} from "react-router-dom"
 import { useSpeechSynthesis } from 'react-speech-kit';
-
+import "../Components/ButtonCard.scss"
 export default function ButtonCard({button, setSearchInput}) {
 
   const { speak } = useSpeechSynthesis();
