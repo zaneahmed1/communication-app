@@ -66,10 +66,10 @@ function Signup({setExistingUser, existingUser}) {
 
 
   return (
-    <div className='center'>
-      <div className='auth'>
+    <div >
+      <div >
         <h1>Sign Up</h1>
-        {error && <div className='auth__error'>{error}</div>}
+        {error && <div >{error}</div>}
         <form onSubmit={register} name='registration_form'>
           <input 
             type='email' 

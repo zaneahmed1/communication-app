@@ -22,9 +22,9 @@ export default function ButtonCard({button, setSearchInput}) {
   }
 
   return (
-    <div className='buttonCard'  onClick={handleClick}>
+    <button className='buttonCard'  onClick={handleClick}>
       
         <img className='buttonCard__image'src={button.button_image} alt={button.button_label}  width="400" height="400"/>
-    </div>
+    </button>
   )
 }

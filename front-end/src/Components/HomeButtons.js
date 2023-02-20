@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import ButtonCard from './ButtonCard'
+import "../Components/HomeButtons.scss"
 
 
 export default function HomeButtons({buttons, searchInput, setSearchInput}) {
@@ -21,13 +22,15 @@ export default function HomeButtons({buttons, searchInput, setSearchInput}) {
 
 
   return (
-    <div>
-      <div>
+    <div className='homeButtons'>
+      <div className='homeButtons__input'>
       <input value={searchInput} type="text" onChange={handleChange}/>
       </div>
+      <div className='homeButtons__buttons'>
     {dataToDisplay.map((button) => {
       return <ButtonCard key={button.id} button={button} setSearchInput={setSearchInput}/>
     })}
+      </div>
     </div>
   )
 }

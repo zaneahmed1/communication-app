@@ -33,10 +33,10 @@ function Login(){
   }
 
   return(
-    <div className='center'>
-      <div className='auth'>
+    <div >
+      <div >
         <h1>Log in</h1>
-        {error && <div className='auth__error'>{error}</div>}
+        {error && <div>{error}</div>}
         <form onSubmit={login} name='login_form'>
           <input 
             type='email' 

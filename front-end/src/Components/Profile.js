@@ -14,8 +14,8 @@ function Profile() {
   }
 
   return (
-      <div className='center'>
-        <div className='profile'>
+      <div >
+        <div >
           <h1>Profile</h1>
           <p><strong>Email: </strong>{currentUser?.email}</p>
           <p>
