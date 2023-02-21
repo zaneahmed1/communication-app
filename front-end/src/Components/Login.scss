@@ -1,0 +1,24 @@
+.login{
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    font-size: 20px;
+    flex-direction: rows;
+
+    &__right{
+        flex: 1;
+    
+    }
+    &__left{
+        flex: 1
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto 10px auto;
+
+}

@@ -4,7 +4,7 @@ import {signInWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {auth} from '../Services/Firebase'
 import {useNavigate} from 'react-router-dom'
 import {useAuthValue} from './AuthContext'
-
+import "../Components/Login.scss"
 
 function Login(){
 
@@ -33,18 +33,19 @@ function Login(){
   }
 
   return(
-    <div >
-      <div >
-        <h1>Log in</h1>
+      <div className='login'>
         {error && <div>{error}</div>}
+        <div className='login__right'>
+        <h1>Log in</h1>
         <form onSubmit={login} name='login_form'>
+          <label>Email</label>
           <input 
             type='email' 
             value={email}
             required
             placeholder="Enter your email"
             onChange={e => setEmail(e.target.value)}/>
-
+         <label>Password</label>
           <input 
             type='password'
             value={password}
@@ -58,8 +59,11 @@ function Login(){
           Don't have and account? 
           <Link to='/signup'>Create one here</Link>
         </p>
+        </div>
+        <div className='login__left'>
+
+        </div>
       </div>
-    </div>
   )
 }
 

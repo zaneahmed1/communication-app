@@ -1,7 +1,9 @@
 import React from 'react'
 import {useNavigate} from "react-router-dom"
 import { useSpeechSynthesis } from 'react-speech-kit';
+
 import "../Components/ButtonCard.scss"
+
 export default function ButtonCard({button, setSearchInput}) {
 
   const { speak } = useSpeechSynthesis();
@@ -9,6 +11,8 @@ export default function ButtonCard({button, setSearchInput}) {
 
   const handleClick = () => {
     speak({ text: button.button_message });
+
+    
     setSearchInput(button.button_label)
     if(button.button_navigate !== "na"){
       navigate('/' + button.button_navigate) 
