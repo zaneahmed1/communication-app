@@ -22,6 +22,7 @@ import VerifyEmail from './Components/VerifyEmail';
 import { Navigate } from "react-router-dom";
 
 
+
 function App() {
 
   const API = process.env.REACT_APP_API_URL;
@@ -72,6 +73,7 @@ function App() {
             ? <Signup />
             : <Navigate to='/' replace/>
           } />
+
             <Route path="/home" element={<HomeButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
             <Route path="/people" element={<PeopleButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/> } />
             <Route path="/questions" element={<QuestionsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
