@@ -18,6 +18,9 @@ export default function ButtonCard({button, setSearchInput}) {
       navigate('/home') 
       setSearchInput('')
     }
+    if(button.button_message === "Clear"){
+      setSearchInput('')
+    }
     
   }
 

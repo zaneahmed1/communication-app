@@ -1,7 +1,7 @@
 .home{
     width: 100vw;
     height: 100vh;
-    background-color: #6FD5FE;
+    background-color: #6fd5fec1;
     display: flex;
     flex-direction: row;
     max-height: 100vh;
@@ -33,7 +33,7 @@
                 justify-content: center;
                 align-items: center;
                 display: flex;
-                background-color: #19beff62;
+                background-color: #6fd5fec1;
                 border-radius: 50%;
                 height: 440px;
                 width: 440px;
@@ -50,7 +50,6 @@
         flex: 1;
     }
     &__text{
-        background-color: #6FD5FE;
         font-family: 'Roboto', sans-serif;
         font-size: 30px;
         text-align: center;
@@ -77,7 +76,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 1200px) {
     .home{
-        background-color: #6FD5FE;
+        background-color: #6fd5fec1;
         display: flex;
         flex-direction: row;
         overflow: hidden;

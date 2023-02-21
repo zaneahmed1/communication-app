@@ -92,7 +92,7 @@ function Signup({setExistingUser, existingUser}) {
             placeholder='Confirm password'
             onChange={e => setConfirmPassword(e.target.value)}/>
 
-          <button type='submit'>Register</button>
+          <button type='submit'>Signup</button>
         </form>
         <span>
           Already have an account?  

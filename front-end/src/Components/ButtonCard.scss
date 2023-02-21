@@ -1,7 +1,14 @@
 .buttonCard{
     border-radius: 20px;
     background-color: rgba(240, 248, 255, 0.508);
-    padding: 10px;
+    max-height:500px;
+
+    width: 340px;
+    &__image{
+        width: 250px;
+        height: 230px;
+        padding: 5px;
+    }
 }
 .buttonCard:hover{
     cursor: pointer;

@@ -1,7 +1,7 @@
 import React from 'react'
 import {useNavigate} from "react-router-dom"
 import ipad from "../../src/ipad.png"
-import logo from "../../src/logo.png"
+import logo from "../../src/touchtalk-logo.png"
 import chat from "../../src/chat.png"
 import "../Components/Home.scss"
 
@@ -31,6 +31,7 @@ export default function Home() {
      <h4>individuals with difficulties using their natural voice.</h4>
         <div className='home__button'>
      <button onClick={()=>navigate('/home')}>Chat</button>
+     <button onClick={()=>navigate('/login')}>Login</button>
         </div>
         </div>
       </div>

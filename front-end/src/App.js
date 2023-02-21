@@ -50,12 +50,6 @@ function App() {
         })
       }, []);
 
-// const addUser = (existingUser) => {
-//   axios
-//   .post(`${API}/users`, existingUser)
-//   .then((res) => setExistingUser(res))
-//   .catch((e) => console.error("catch", e));
-// }
 
   return (
     <div className="App">

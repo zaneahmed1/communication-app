@@ -1,7 +1,7 @@
 .homeButtons{
     width: 100vw;
     height: 100vh;
-    background-color: #6fd5fe31;
+    background-color: #6fd5fec1;
     max-height: 100vh;
     overflow: hidden;
     display: flex;
@@ -12,16 +12,27 @@
         &__input{
         flex: 1 10%;
         padding: 2%;
+        &__clear{
+            position: absolute;
+            left: 89%;
+        }
     }
 
     &__buttons{
         flex: 1 90%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    
     }
 }
 
 input{
    width: 90%;
    height: 100%;
-   font-size: 20px;
+   font-size: 40px;
    border-radius: 20px;
+   padding: 5px;
 }
