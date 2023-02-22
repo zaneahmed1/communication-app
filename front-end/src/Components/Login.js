@@ -4,6 +4,8 @@ import {signInWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {auth} from '../Services/Firebase'
 import {useNavigate} from 'react-router-dom'
 import {useAuthValue} from './AuthContext'
+import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
 import "../Components/Login.scss"
 
 function Login(){
@@ -39,21 +41,21 @@ function Login(){
         <h1>Log in</h1>
         <form onSubmit={login} name='login_form'>
           <label>Email</label>
-          <input 
+          <TextField 
             type='email' 
             value={email}
             required
             placeholder="Enter your email"
             onChange={e => setEmail(e.target.value)}/>
          <label>Password</label>
-          <input 
+          <TextField 
             type='password'
             value={password}
             required
             placeholder='Enter your password'
             onChange={e => setPassword(e.target.value)}/>
 
-          <button type='submit'>Login</button>
+          <Button type='submit'>Login</Button>
         </form>
         <p>
           Don't have and account? 

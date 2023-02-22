@@ -20,6 +20,7 @@ import PrivateRoute from "./Components/Private";
 import {auth} from '../src/Services/Firebase'
 import VerifyEmail from './Components/VerifyEmail';
 import { Navigate } from "react-router-dom";
+import NavBar from "./Components/NavBar";
 
 
 
@@ -55,6 +56,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <NavBar/>
       <AuthProvider value={{currentUser, timeActive, setTimeActive}}>
           <Routes>
             <Route path="/" element={<Home/>} />
