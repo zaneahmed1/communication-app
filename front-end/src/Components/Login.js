@@ -38,10 +38,11 @@ function Login(){
       <div className='login'>
         {error && <div>{error}</div>}
         <div className='login__right'>
+        <form onSubmit={login}>
         <h1>Log in</h1>
-        <form onSubmit={login} name='login_form'>
           <label>Email</label>
           <TextField 
+          className='login__input'
             type='email' 
             value={email}
             required
@@ -49,6 +50,7 @@ function Login(){
             onChange={e => setEmail(e.target.value)}/>
          <label>Password</label>
           <TextField 
+          className='login__input'
             type='password'
             value={password}
             required
@@ -56,14 +58,14 @@ function Login(){
             onChange={e => setPassword(e.target.value)}/>
 
           <Button type='submit'>Login</Button>
-        </form>
-        <p>
+        <div className='login__text'>
           Don't have and account? 
-          <Link to='/signup'>Create one here</Link>
-        </p>
+          <Link to='/signup'> Sign up here</Link>
+        </div>
+        </form>
         </div>
         <div className='login__left'>
-
+          
         </div>
       </div>
   )
