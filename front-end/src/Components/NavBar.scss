@@ -1,25 +1,40 @@
 .navBar{
-    background-color: rgb(193, 188, 242);
+    background-color:  #6fd5fe;
     height: 100%;
     display: flex;
     flex-direction: row;
-    &__list{
-       margin-left: 200px;
-    }
+    align-items: center;
     &__listItem{
-        display: inline-block;
-        padding: 0 5em;
+        padding: 0 2em;
         font-size: 16px;
     }
 }
-// nav{
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     height: 5%;
-// }
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6%;
+    margin-left: 70%;
+}
 
-// li{
-//     list-style: none;
-//     text-decoration: none;
-// }
+@media screen and (min-width: 320px) and (max-width: 1200px){
+    .navBar{
+        background-color: rgb(193, 188, 242);
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0 55px;
+
+        &__listItem{
+            font-size: 16px;
+        }
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5%;
+        margin-left: 60%;
+    }
+}

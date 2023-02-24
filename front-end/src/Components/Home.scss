@@ -1,7 +1,4 @@
-body{
-    padding:0;
-    margin:0;
-}
+
 .home{
     width: 100vw;
     height: 100vh;
@@ -27,8 +24,8 @@ body{
             height: 550px;
             border-radius: 50%;
             border: 5px dashed rgb(0, 0, 0);
-            margin-left: 40%;
-            margin-top: 25%;
+            margin-left: 10%;
+            margin-top: 45%;
             justify-content: center;
             align-items: center;
             display: flex;
@@ -61,16 +58,18 @@ body{
     &__text h4{
         font-weight: 10;
     }
+
     &__button button{
         font-family: 'Roboto', sans-serif;
         font-size: 25px;
         cursor: pointer;
         height: 70px;
-        width: 110px;
+        width: 150px;
         border-radius: 15px;
         text-align: center;
         background-color: #FFC533;
         border: solid 1px black;
+        margin-left: 5%;
     }
     &__button button:hover{
         background-color: rgba(255, 255, 255, 0.705);
@@ -83,8 +82,8 @@ body{
         background-color: #6fd5fec1;
         display: flex;
         flex-direction: row;
-        overflow: hidden;
-    
+        max-width: 100%;
+         padding: 0 20px;
         &__left{
             justify-content: center;
             align-items: center;
@@ -140,3 +139,4 @@ body{
         }
     }
 }
+

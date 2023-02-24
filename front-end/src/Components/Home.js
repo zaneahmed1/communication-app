@@ -12,9 +12,6 @@ export default function Home() {
     <div className='home'>
 
       <div className='home__ left'>
-      <div className='home__logo'>
-      <img src={logo} alt="logo"/>
-      </div>
 
       <div className='home__image'>
         <div className='home__image__wrapper' >
