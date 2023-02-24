@@ -3,8 +3,9 @@ import {auth} from '../Services/Firebase'
 import {useNavigate, Link} from 'react-router-dom'
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {useAuthValue} from './AuthContext'
-import axios from 'axios'
-
+import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
+import "../Components/Signup.scss"
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -66,40 +67,49 @@ function Signup({setExistingUser, existingUser}) {
 
 
   return (
-    <div >
-      <div >
-        <h1>Sign Up</h1>
+    <div className='signup'>
+
         {error && <div >{error}</div>}
+        <div className='signup__left'>
+       
+        </div>
+        <div className='signup__right'>
         <form onSubmit={register} name='registration_form'>
-          <input 
+        <h1>Sign Up</h1>
+        <label>Email</label>
+          <TextField
+          className='signup__input'
             type='email' 
             value={email}
             placeholder="Enter your email"
             required
             onChange={e => setEmail(e.target.value)}/>
-
-          <input 
+                    <label>Password</label>
+          <TextField
+          className='signup__input'
             type='password'
             value={password} 
             required
             placeholder='Enter your password'
             onChange={e => setPassword(e.target.value)}/>
-
-            <input 
+        <label>Confirm Password</label>
+            <TextField
+            className='signup__input'
             type='password'
             value={confirmPassword} 
             required
             placeholder='Confirm password'
             onChange={e => setConfirmPassword(e.target.value)}/>
 
-          <button type='submit'>Signup</button>
-        </form>
-        <span>
+          <Button  type='submit'>Signup</Button>
+        <div>
           Already have an account?  
-          <Link to='/login'>login</Link>
-        </span>
+          <Link to='/login'> Login</Link>
+        </div>
+        </form>
+        </div>
       </div>
-    </div>
+
   )
 }
 
