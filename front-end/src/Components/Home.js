@@ -4,6 +4,7 @@ import ipad from "../../src/ipad.png"
 import logo from "../../src/touchtalk-logo.png"
 import chat from "../../src/chat.png"
 import "../Components/Home.scss"
+import { Button } from '@mui/material';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -27,8 +28,8 @@ export default function Home() {
      <h4>TouchTalk is an augmentative and alternative communication (AAC) app for  </h4>
      <h4>individuals with difficulties using their natural voice.</h4>
         <div className='home__button'>
-     <button onClick={()=>navigate('/home')}>Chat</button>
-     <button onClick={()=>navigate('/login')}>Login</button>
+     <Button variant="contained" onClick={()=>navigate('/home')}>Chat</Button>
+     <Button variant="contained" onClick={()=>navigate('/login')}>Login</Button>
         </div>
         </div>
       </div>

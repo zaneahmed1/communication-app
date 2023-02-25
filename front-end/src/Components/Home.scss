@@ -68,12 +68,12 @@
         border-radius: 15px;
         text-align: center;
         background-color: #FFC533;
-        border: solid 1px black;
         margin-left: 5%;
+        color: black;
     }
     &__button button:hover{
         background-color: rgba(255, 255, 255, 0.705);
-        transition: 0.8s;
+        transition: 0.3s;
     }
 }
 
@@ -145,12 +145,11 @@
         border-radius: 15px;
         text-align: center;
         background-color: #FFC533;
-        border: solid 1px black;
         margin-left: 5%;
     }
     &__button button:hover{
         background-color: rgba(255, 255, 255, 0.705);
-        transition: 0.8s;
+        transition: 0.3s;
     }
 }
 }
@@ -213,12 +212,11 @@
         border-radius: 15px;
         text-align: center;
         background-color: #FFC533;
-        border: solid 1px black;
         margin-left: 5%;
     }
     &__button button:hover{
         background-color: rgba(255, 255, 255, 0.705);
-        transition: 0.8s;
+        transition: 0.3s;
     }
 } 
 }

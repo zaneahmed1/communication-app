@@ -4,6 +4,7 @@ import "../Components/HomeButtons.scss"
 import clear from "../clearcolor.png"
 
 
+
 export default function HomeButtons({buttons, searchInput, setSearchInput}) {
   const copy = [...buttons]
   let homeButtons =  copy.filter(button=>button.button_category === "Home")
