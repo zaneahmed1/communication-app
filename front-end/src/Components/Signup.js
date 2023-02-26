@@ -12,6 +12,8 @@ const API = process.env.REACT_APP_API_URL;
 function Signup({setExistingUser, existingUser}) {
 
   const [email, setEmail] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
@@ -63,6 +65,8 @@ function Signup({setExistingUser, existingUser}) {
     setEmail('')
     setPassword('')
     setConfirmPassword('')
+    setFirstName('')
+    setLastName('')
   }
 
 
@@ -76,6 +80,26 @@ function Signup({setExistingUser, existingUser}) {
         <div className='signup__right'>
         <form onSubmit={register} name='registration_form'>
         <h1>Sign Up</h1>
+        <div className='signup__labelWrapper'>
+        <label className='signup__label'>First Name</label>
+        <label className='signup__label'>Last Name</label>
+        </div>
+        <div className='signup__nameWrapper'>
+          <TextField
+          className='signup__input signup__name'
+            type='text' 
+            value={firstName}
+            placeholder="Enter your first name"
+            required
+            onChange={e => setFirstName(e.target.value)}/>
+          <TextField
+          className='signup__input signup__name'
+            type='text' 
+            value={lastName}
+            placeholder="Enter your last name"
+            required
+            onChange={e => setLastName(e.target.value)}/>
+        </div>
         <label>Email</label>
           <TextField
           className='signup__input'
