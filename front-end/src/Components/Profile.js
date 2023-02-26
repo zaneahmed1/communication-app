@@ -4,7 +4,7 @@ import { auth } from '../Services/Firebase'
 import {useNavigate} from 'react-router-dom'
 
 
-function Profile() {
+function Profile(setExistingUser, existingUser) {
   const {currentUser} = useAuthValue()
   const navigate = useNavigate()
 
@@ -12,6 +12,7 @@ function Profile() {
     signOut(auth)
     navigate('/login')
   }
+  console.log(existingUser)
 
   return (
       <div >

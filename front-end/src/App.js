@@ -31,7 +31,6 @@ function App() {
   const [buttons, setButtons] = useState([])
   const [searchInput, setSearchInput] = useState('');
   const [currentUser, setCurrentUser] = useState(null)
-  const [timeActive, setTimeActive] = useState(false)
   const [existingUser, setExistingUser] = useState({
     uuid: "",
     email: "",
@@ -57,7 +56,7 @@ function App() {
     <div className="App">
       <Router>
         <NavBar currentUser={currentUser}/>
-      <AuthProvider value={{currentUser, timeActive, setTimeActive}}>
+      <AuthProvider value={{currentUser}}>
           <Routes>
             <Route path="/" element={<Home/>} />
             {/* <Route exact path='/' element={
@@ -70,7 +69,7 @@ function App() {
             ? <Login/>
             : <Navigate to='/' replace/>
           } />
-          <Route path="/signup" element={
+          <Route path="/signup"  element={
             !currentUser?.emailVerified 
             ? <Signup />
             : <Navigate to='/' replace/>
@@ -84,8 +83,8 @@ function App() {
             <Route path="/actions" element={<ActionsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
             <Route path="/chat" element={<ChatButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
             <Route path="/new" element={<NewButtonForm/>}/>
-            <Route path='/verify-email' element={<VerifyEmail setExistingUser={setExistingUser} existingUser={existingUser}/>} /> 
-            <Route path='/profile' element={<Profile/>} /> 
+            {/* <Route path='/verify-email' element={<VerifyEmail setExistingUser={setExistingUser} existingUser={existingUser}/>} />  */}
+            <Route path='/profile' element={<Profile setExistingUser={setExistingUser} existingUser={existingUser}/>} /> 
           </Routes>
       </AuthProvider>
       </Router>

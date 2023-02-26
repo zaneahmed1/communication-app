@@ -4,26 +4,26 @@ import {auth} from '../Services/Firebase'
 import {sendEmailVerification} from 'firebase/auth'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import "../Components/VerifyEmail.scss"
+import { Button } from '@mui/material'
+
 
 
 const API = process.env.REACT_APP_API_URL;
 
-function VerifyEmail({setExistingUser, existingUser}) {
+function VerifyEmail({handleClose}) {
 
   const {currentUser} = useAuthValue()
-  const [time, setTime] = useState(60)
-  const {timeActive, setTimeActive} = useAuthValue()
   const navigate = useNavigate()
 
   const addUser = async () => {
     if(currentUser?.emailVerified){
       axios
-      .post(`${API}/users`, {...existingUser, uuid: currentUser?.uid})
+      .post(`${API}/users`, {...existingUser, uuid: currentUser?.uid, firstname: firstName, lastname: lastName})
           .then(res => {
             if(res.data.payload.uuid){
               setExistingUser(res.data.payload)
               navigate("/profile")
-              console.log(existingUser)
             }
           })
     }
@@ -31,64 +31,40 @@ function VerifyEmail({setExistingUser, existingUser}) {
 
 
   useEffect(() => {
-    const interval = setInterval(() => {
       currentUser?.reload()
       .then(() => {
         if(currentUser?.emailVerified){
+         handleClose()
           addUser()
-          // setExistingUser({...existingUser, uuid: currentUser.uid})
-          // setExistingUser({...existingUser, email: currentUser.email})
-          // setExistingUser(existingUser =>({...existingUser, uuid: currentUser.uid,
-          //   email: currentUser.email,
-          //   firstname: currentUser.displayName,
-          //   lastname: currentUser.displayName,
-          //   photourl: currentUser.photoURL}))
-          clearInterval(interval)
           navigate('/profile')
         }
       })
-    }, 1000)
   }, [navigate, currentUser])
 
-  useEffect(() => {
-    let interval = null
-    if(timeActive && time !== 0 ){
-      interval = setInterval(() => {
-        setTime((time) => time - 1)
-      }, 1000)
-    }else if(time === 0){
-      setTimeActive(false)
-      setTime(60)
-      clearInterval(interval)
-    }
-    return () => clearInterval(interval);
-  }, [timeActive, time, setTimeActive])
 
   const resendEmailVerification = () => {
     sendEmailVerification(auth.currentUser)
-    .then(() => {
-      setTimeActive(true)
-    }).catch((err) => {
-      alert(err.message)
-    })
   }
 
+
+
   return (
-    <div className='center'>
-      <div className='verifyEmail'>
-        <h1>Verify your Email Address</h1>
-        <p>
-          <strong>A Verification email has been sent to:</strong><br/>
+    <div>
+
+
+      <div className='modalContent'>
+        <img src='https://cdn-icons-png.flaticon.com/512/2875/2875394.png' height='150px'/>
+        <div className='modalContent__title'>Verify your email adress</div>
+        <div  className='modalContent__text'>A verification email has been sent to:</div>
           <span>{currentUser?.email}</span>
-        </p>
-        <span>Follow the instruction in the email to verify your account</span>       
-        <button 
+        <span>Follow the instructions in the email to verify your account.</span>       
+        <Button variant="contained"
           onClick={resendEmailVerification}
-          disabled={timeActive}
-        >Resend Email {timeActive && time}</button>
+        >Resend Email </Button>
       </div>
+
     </div>
-  )
+    ) 
 }
 
 export default VerifyEmail
