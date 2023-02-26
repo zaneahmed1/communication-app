@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar/>
+        <NavBar currentUser={currentUser}/>
       <AuthProvider value={{currentUser, timeActive, setTimeActive}}>
           <Routes>
             <Route path="/" element={<Home/>} />

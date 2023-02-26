@@ -6,15 +6,24 @@ import logo from "../logo.png";
 import {useState} from 'react'
 import { useNavigate } from "react-router-dom";
 import { MenuItem } from "@mui/material";
-import {auth} from '../Services/Firebase'
+import { signOut } from "firebase/auth";
+import { auth } from "../Services/Firebase";
 
-export default function NavBar() {
+export default function NavBar({currentUser}) {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const handleLogin = () => {
+  navigate("/login")
+  }
+
+  const handleLogout = () => {
+   signOut(auth)
+   navigate('/')
+  }
+
   const handleClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
-    console.log("hello")
   };
 
   return (
@@ -30,8 +39,7 @@ export default function NavBar() {
           <img src={gear} height="70px" />
         {isDropdownOpen && (
           <div className="dropdown__Items">
-            <MenuItem className="dropdown__Item" onClick={() => navigate("/profile")}>Profile</MenuItem>
-            <MenuItem className="dropdown__Item" onClick={() => navigate("/login")}>Login</MenuItem>
+            {currentUser?.emailVerified ? (<div> <MenuItem className="dropdown__Item" onClick={() => navigate("/profile")}>Profile</MenuItem>  <MenuItem className="dropdown__Item" onClick={handleLogout}>Logout</MenuItem> </div>) :      <MenuItem className="dropdown__Item" onClick={handleLogin}>Login</MenuItem>}
           </div>
         )}
         </div>

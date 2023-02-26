@@ -22,11 +22,12 @@ nav{
 .dropdown{
     overflow: visible;
     position: relative;
+    z-index: 10;
 
     &__Items{
         position: absolute;
   overflow: visible;
-  background-color: rgba(255, 255, 255, 0.633);
+  background-color: rgba(255, 255, 255, 0.846);
   margin-top: 17px;
   padding: 5px;
     }
