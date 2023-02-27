@@ -5,13 +5,19 @@ import {sendEmailVerification} from 'firebase/auth'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import "../Components/VerifyEmail.scss"
-import { Button } from '@mui/material'
+import { Modal, Button, Typography } from '@material-ui/core'
 
 
 
 const API = process.env.REACT_APP_API_URL;
 
-function VerifyEmail({handleClose}) {
+function VerifyEmail({openModal, setOpenModal, setExistingUser, existingUser}) {
+
+
+  const handleClose = () => {
+    setOpenModal(false)
+  }
+
 
   const {currentUser} = useAuthValue()
   const navigate = useNavigate()
@@ -29,30 +35,40 @@ function VerifyEmail({handleClose}) {
     }
   }
 
-
   useEffect(() => {
+    const interval = setInterval(() => {
       currentUser?.reload()
       .then(() => {
         if(currentUser?.emailVerified){
-         handleClose()
-          addUser()
+          clearInterval(interval)
+          handleClose()
           navigate('/profile')
         }
       })
+      .catch((err) => {
+        alert(err.message)
+      })
+    }, 1000)
   }, [navigate, currentUser])
+
 
 
   const resendEmailVerification = () => {
     sendEmailVerification(auth.currentUser)
   }
 
-
-
   return (
-    <div>
 
-
-      <div className='modalContent'>
+ <div>
+      <Modal
+        open={openModal}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <div >
+          <Typography variant="h6" id="modal-title">
+          <div className='modalContent'>
         <img src='https://cdn-icons-png.flaticon.com/512/2875/2875394.png' height='150px'/>
         <div className='modalContent__title'>Verify your email adress</div>
         <div  className='modalContent__text'>A verification email has been sent to:</div>
@@ -62,8 +78,11 @@ function VerifyEmail({handleClose}) {
           onClick={resendEmailVerification}
         >Resend Email </Button>
       </div>
-
+          </Typography>
+        </div>
+      </Modal>
     </div>
+
     ) 
 }
 

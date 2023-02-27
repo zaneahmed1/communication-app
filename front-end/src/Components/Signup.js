@@ -7,7 +7,7 @@ import {
 } from "firebase/auth";
 import { useAuthValue } from "./AuthContext";
 import TextField from "@mui/material/TextField";
-import { Modal, Button, Typography } from '@material-ui/core'
+import { Button } from '@mui/material'
 import "../Components/Signup.scss";
 import VerifyEmail from "./VerifyEmail";
 
@@ -16,7 +16,7 @@ import VerifyEmail from "./VerifyEmail";
 const API = process.env.REACT_APP_API_URL;
 
 function Signup({ setExistingUser, existingUser }) {
-    const {setTimeActive, currentUser} = useAuthValue()
+
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -25,6 +25,9 @@ function Signup({ setExistingUser, existingUser }) {
   const [error, setError] = useState("");
   const [openModal, setOpenModal] = useState(false)
 
+  const handleOpen = () => {
+    setOpenModal(true)
+  }
 
   const validatePassword = () => {
     let isValid = true;
@@ -50,14 +53,6 @@ function Signup({ setExistingUser, existingUser }) {
   //   }
   // }
 
-  const handleOpen = () => {
-    setOpenModal(true)
-  }
-
-  const handleClose = () => {
-    setOpenModal(false)
-    console.log("yo")
-  }
 
   const register = (e) => {
     e.preventDefault();
@@ -149,20 +144,7 @@ function Signup({ setExistingUser, existingUser }) {
           </div>
         </form>
       </div>
-      <div>
-      <Modal
-        open={openModal}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        <div >
-          <Typography variant="h6" id="modal-title">
-         <VerifyEmail handleClose={handleClose}/>
-          </Typography>
-        </div>
-      </Modal>
-    </div>
+      <VerifyEmail openModal={openModal} setOpenModal={setOpenModal}/>
     </div> 
   );
 }
