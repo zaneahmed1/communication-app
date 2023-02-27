@@ -19,4 +19,4 @@ CREATE TABLE buttons (
     button_message TEXT,
     button_image VARCHAR(2083),
     button_navigate TEXT
-)
+);

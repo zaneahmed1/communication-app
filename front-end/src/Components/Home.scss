@@ -16,12 +16,12 @@
         flex: 1;
     }
         &__logo img{
-            height: 250px;
+            height: 50px;
         }
         &__image{
             transform: rotate(-18deg);
-            width: 550px;
-            height: 550px;
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
             border: 5px dashed rgb(0, 0, 0);
             margin-left: 10%;
@@ -36,12 +36,12 @@
                 display: flex;
                 background-color: #6fd5fec1;
                 border-radius: 50%;
-                height: 440px;
-                width: 440px;
+                height: 280px;
+                width: 280px;
             }
         }
         &__image img{
-            height: 300px;
+            height: 200px;
         }
     &__right{
        justify-content: center;
@@ -52,7 +52,7 @@
     }
     &__text{
         font-family: 'Roboto', sans-serif;
-        font-size: 30px;
+        font-size: 23px;
         text-align: center;
     }
     &__text h4{
@@ -68,7 +68,7 @@
         border-radius: 15px;
         text-align: center;
         background-color: #FFC533;
-        margin-left: 5%;
+        margin-left: 4%;
         color: black;
     }
     &__button button:hover{
