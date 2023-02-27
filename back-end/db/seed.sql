@@ -9,7 +9,6 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('Home', 'Keyboard', 'Keyboard', 'https://i.postimg.cc/nzm4V7TQ/keyboard.png', 'na'),
 ('Home', 'Time/Date', 'Time/Date', 'https://cdn-icons-png.flaticon.com/512/3652/3652267.png', 'timedate'),
 -- ('Home', 'School', 'School', 'https://cdn-icons-png.flaticon.com/512/2602/2602414.png'),
-('Home', 'Clear', 'Clear', 'https://cdn-icons-png.flaticon.com/512/3602/3602448.png', 'na'),
 ('Questions', 'Who?', 'Who?', 'https://i.postimg.cc/FHpYbMjT/gender-identity.png', 'na'),
 ('Questions', 'What?', 'What?', 'https://cdn-icons-png.flaticon.com/512/5625/5625695.png', 'na'),
 ('Questions', 'Where?', 'Where?', 'https://cdn-icons-png.flaticon.com/512/5359/5359676.png', 'na'),
@@ -18,7 +17,6 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('Questions', 'How?', 'How?', 'https://cdn-icons-png.flaticon.com/512/5579/5579275.png', 'na'),
 ('Questions', 'How are you?', 'How are you?', 'https://cdn-icons-png.flaticon.com/512/3855/3855199.png', 'na'),
 ('Questions', 'Home', 'Home', 'https://i.postimg.cc/mk65x7r1/home.png', 'na'),
-('Questions', 'Clear', 'Clear', 'https://cdn-icons-png.flaticon.com/512/3602/3602448.png', 'na'),
 -- ('Questions', 'What time is it?', 'What time is it?', 'https://ibb.co/6FR89HS' ),
 -- ('Questions', 'How much?', 'How much?', 'https://cdn-icons-png.flaticon.com/512/5229/5229414.png' ),
 ('People', 'Mom', 'Mom', 'https://i.postimg.cc/sDH4cVBx/mother.png', 'na'),
@@ -29,7 +27,6 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('People', 'He', 'He', 'https://cdn-icons-png.flaticon.com/512/2825/2825307.png', 'na'),
 ('People', 'People', 'People', 'https://cdn-icons-png.flaticon.com/512/554/554775.png', 'na'),
 ('People', 'Home', 'Home', 'https://i.postimg.cc/mk65x7r1/home.png', 'na'),
-('People', 'Clear', 'Clear', 'https://cdn-icons-png.flaticon.com/512/3602/3602448.png', 'na'),
 ('Actions', 'Eat', 'Eat', 'https://cdn-icons-png.flaticon.com/512/3572/3572701.png', 'na'),
 ('Actions', 'Like', 'Like', 'https://cdn-icons-png.flaticon.com/512/3208/3208707.png', 'na'),
 ('Actions', 'Drink', 'Drink', 'https://i.postimg.cc/C54TtcBh/drinking-water.png', 'na'),
@@ -38,7 +35,6 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('Actions', 'Help', 'Help', 'https://i.postimg.cc/026bTm5Y/help.png', 'na'),
 ('Actions', 'Think', 'Think', 'https://i.postimg.cc/3wN61KFx/question.png', 'na'),
 ('Actions', 'Home', 'Home', 'https://i.postimg.cc/mk65x7r1/home.png', 'na'),
-('Actions', 'Clear', 'Clear', 'https://cdn-icons-png.flaticon.com/512/3602/3602448.png', 'na'),
 ('Things', 'Food/Drink', 'Food/Drink', 'https://cdn-icons-png.flaticon.com/512/706/706195.png', 'na'),
 ('Things', 'Art', 'Art', 'https://cdn-icons-png.flaticon.com/512/2400/2400603.png', 'na'),
 ('Things', 'Music', 'Music', 'https://cdn-icons-png.flaticon.com/512/9448/9448086.png', 'na'),
@@ -47,7 +43,6 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('Things', 'Money', 'Money', 'https://cdn-icons-png.flaticon.com/512/3044/3044876.png', 'na'),
 ('Things', 'Bathroom', 'Bathroom', 'https://cdn-icons-png.flaticon.com/512/994/994947.png', 'na'),
 ('Things', 'Home', 'Home', 'https://i.postimg.cc/mk65x7r1/home.png', 'na'),
-('Things', 'Clear', 'Clear', 'https://cdn-icons-png.flaticon.com/512/3602/3602448.png', 'na'),
 ('Chat', 'Hello', 'Hello', 'https://cdn-icons-png.flaticon.com/512/5619/5619967.png', 'na'),
 ('Chat', 'Goodbye', 'Goodbye', 'https://cdn-icons-png.flaticon.com/512/5619/5619652.png', 'na'),
 ('Chat', 'Good Morning', 'Good Morning', 'https://cdn-icons-png.flaticon.com/512/9095/9095375.png', 'na'),
@@ -56,7 +51,6 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('Chat', 'What is your name?', 'What is your name?', 'https://cdn-icons-png.flaticon.com/512/9533/9533813.png', 'na'),
 ('Chat', 'My name is ', 'My name is ', 'https://cdn-icons-png.flaticon.com/512/4839/4839326.png', 'na'),
 ('Chat', 'Home', 'Home', 'https://i.postimg.cc/mk65x7r1/home.png', 'na'),
-('Chat', 'Clear', 'Clear', 'https://cdn-icons-png.flaticon.com/512/3602/3602448.png', 'na'),
 ('Time/Date', 'Today', 'Today', 'https://cdn-icons-png.flaticon.com/512/2489/2489295.png', 'na'),
 ('Time/Date', 'Tomorrow', 'Tomorrow', 'https://cdn-icons-png.flaticon.com/512/6133/6133506.png', 'na'),
 ('Time/Date', 'Yesterday', 'Yesterday', 'https://cdn-icons-png.flaticon.com/512/4285/4285655.png', 'na'),
@@ -64,8 +58,7 @@ INSERT INTO buttons (button_category, button_label, button_message, button_image
 ('Time/Date', 'Day', 'Day', 'https://cdn-icons-png.flaticon.com/512/2773/2773274.png', 'na'),
 ('Time/Date', 'Month', 'Month', 'https://cdn-icons-png.flaticon.com/512/9514/9514676.png', 'na'),
 ('Time/Date', 'Year', 'Year', 'https://cdn-icons-png.flaticon.com/512/9109/9109237.png', 'na'),
-('Time/Date', 'Home', 'Home', 'https://i.postimg.cc/mk65x7r1/home.png', 'na'),
-('Time/Date', 'Clear', 'Clear', 'https://cdn-icons-png.flaticon.com/512/3602/3602448.png', 'na');
+('Time/Date', 'Home', 'Home', 'https://i.postimg.cc/mk65x7r1/home.png', 'na');
 
 INSERT INTO users ("uuid", "email", "firstname", "lastname", "photourl") VALUES
 ('wBRz4XOd8nTanqD0C9QRlo52u603','zaneahmed@pursuit.org', 'Zane','Ahmed', 'https://media.licdn.com/dms/image/D4E03AQEozdVZBWW2Jw/profile-displayphoto-shrink_800_800/0/1674008585991?e=1681948800&v=beta&t=Y6CYN2LgrsY26pKLdyUD7IMjctsnr6_J_Jc1AV-zax8') ;

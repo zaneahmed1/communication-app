@@ -5,17 +5,14 @@
     overflow: hidden;
     display: flex;
     font-size: 20px;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     background-color: #6fd5fec1;
     &__right{
-        flex: 1;
-        margin-top: 10px;
-        margin-left: 150px;
-        margin-right: 600px;
+      width: 35%;
+      margin-top: -12%
     }
-    &__left{
-        flex: 1
-    }
+    
     &__input{
         background-color: rgba(255, 255, 255, 0.75);
     }
@@ -28,7 +25,7 @@ form{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin: 100px auto;
+    margin: 80px auto;
     background-color: rgba(255, 255, 255, 0.313);
     border-radius: 10px;
     backdrop-filter: blur(10px);

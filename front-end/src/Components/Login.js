@@ -64,9 +64,9 @@ function Login(){
         </div>
         </form>
         </div>
-        <div className='login__left'>
+        {/* <div className='login__left'>
           
-        </div>
+        </div> */}
       </div>
   )
 }

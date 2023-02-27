@@ -87,7 +87,7 @@ function Signup({ setExistingUser, existingUser }) {
   return (
     <div className="signup">
       {error && <div>{error}</div>}
-      <div className="signup__left"></div>
+      {/* <div className="signup__left"></div> */}
       <div className="signup__right">
         <form onSubmit={register} name="registration_form">
           <h1>Sign Up</h1>
