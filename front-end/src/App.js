@@ -84,7 +84,7 @@ function App() {
             <Route path="/chat" element={<ChatButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
             <Route path="/new" element={<NewButtonForm/>}/>
             {/* <Route path='/verify-email' element={<VerifyEmail setExistingUser={setExistingUser} existingUser={existingUser}/>} />  */}
-            <Route path='/profile' element={<Profile setExistingUser={setExistingUser} existingUser={existingUser}/>} /> 
+            <Route path='/profile' element={<Profile />} /> 
           </Routes>
       </AuthProvider>
       </Router>

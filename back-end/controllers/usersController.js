@@ -37,10 +37,10 @@ users.get("/:uuid", async (req, res) => {
 });
 // Create
 users.post("/", async (req, res) => {
-  const { body } = req;
   // ONLY a successful post will return an object with a key of id
   try {
-    const createdUser = await createUser(body);
+    const createdUser = await createUser(req.body);
+    console.log(createdUser)
     if (createdUser.uuid) {
       res.status(200).json({
         success: true,

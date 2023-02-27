@@ -24,6 +24,8 @@ function Signup({ setExistingUser, existingUser }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [openModal, setOpenModal] = useState(false)
+  const [updateFirstName, setUpdateFirstName] = useState("")
+  const [updateLastName, setUpdateLastName] = useState("")
 
   const handleOpen = () => {
     setOpenModal(true)
@@ -71,6 +73,8 @@ function Signup({ setExistingUser, existingUser }) {
         .catch((err) => setError(err.message));
     }
    handleOpen()
+    setUpdateFirstName(firstName)
+    setUpdateLastName(lastName)
     setEmail("");
     setPassword("");
     setConfirmPassword("");
@@ -144,7 +148,7 @@ function Signup({ setExistingUser, existingUser }) {
           </div>
         </form>
       </div>
-      <VerifyEmail openModal={openModal} setOpenModal={setOpenModal}/>
+      <VerifyEmail openModal={openModal} setOpenModal={setOpenModal} updateFirstName={updateFirstName} updateLastName={updateLastName}/>
     </div> 
   );
 }

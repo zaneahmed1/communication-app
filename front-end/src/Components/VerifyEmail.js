@@ -11,7 +11,7 @@ import { Modal, Button, Typography } from '@material-ui/core'
 
 const API = process.env.REACT_APP_API_URL;
 
-function VerifyEmail({openModal, setOpenModal, setExistingUser, existingUser}) {
+function VerifyEmail({openModal, setOpenModal, setExistingUser, existingUser, updateFirstName, updateLastName}) {
 
 
   const handleClose = () => {
@@ -22,25 +22,22 @@ function VerifyEmail({openModal, setOpenModal, setExistingUser, existingUser}) {
   const {currentUser} = useAuthValue()
   const navigate = useNavigate()
 
-  const addUser = async () => {
-    if(currentUser?.emailVerified){
-      axios
-      .post(`${API}/users`, {...existingUser, uuid: currentUser?.uid, firstname: firstName, lastname: lastName})
-          .then(res => {
-            if(res.data.payload.uuid){
-              setExistingUser(res.data.payload)
-              navigate("/profile")
-            }
-          })
-    }
-  }
 
   useEffect(() => {
+    const addUser = async () => {
+        axios
+        .post(`${API}/users`, {...existingUser, uuid: currentUser?.uid, email: currentUser?.email, firstname: updateFirstName, lastname: updateLastName, photourl: ""})
+            .then(res => {
+              console.log(res.data.payload)
+                setExistingUser(res.data.payload)
+            })
+      }
     const interval = setInterval(() => {
       currentUser?.reload()
       .then(() => {
         if(currentUser?.emailVerified){
           clearInterval(interval)
+          addUser()
           handleClose()
           navigate('/profile')
         }
