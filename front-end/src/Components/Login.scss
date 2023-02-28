@@ -35,3 +35,31 @@ form{
 }
 
 
+
+@media only screen and (max-width: 450px){
+    .login{
+    &__right{
+        width: 75%;
+        margin-top: -35%
+      }
+      
+      &__input{
+          background-color: rgba(255, 255, 255, 0.75);
+      }
+      &__text{
+          padding-top: 20px;
+      }
+    form{
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        gap: 15px;
+        margin: 80px auto;
+        background-color: rgba(255, 255, 255, 0.313);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.352);
+        padding: 50px 35px;
+    }
+}
+}
