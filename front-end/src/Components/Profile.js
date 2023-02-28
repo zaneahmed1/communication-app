@@ -7,8 +7,9 @@ import { Button } from '@mui/material'
 import { useState, useEffect } from "react";
 import axios from "axios"
 import Avatar from '@mui/material/Avatar'
+import Loading from './Loading'
 
-function Profile() {
+function Profile({loading, setLoading}) {
   const API = process.env.REACT_APP_API_URL;
 const [users, setUsers] = useState([])
 
@@ -20,11 +21,21 @@ const [users, setUsers] = useState([])
     navigate('/login')
   }
 
+  if(loading){
+    return (<div><Loading/></div>)
+  }
+
   useEffect(() => {
     axios
       .get(`${API}/users`)
-      .then((response) => setUsers(response.data.payload))
-      .catch((e) => console.error("catch", e));
+      .then((response) => {
+        setUsers(response.data.payload)
+        setLoading(false)
+      })
+      .catch((e) => {
+        console.error("catch", e)
+        setLoading(false)
+      });
       
       // onAuthStateChanged(auth, (user) => {
       //   setCurrentUser(user)

@@ -21,6 +21,7 @@ import {auth} from '../src/Services/Firebase'
 import VerifyEmail from './Components/VerifyEmail';
 import { Navigate } from "react-router-dom";
 import NavBar from "./Components/NavBar";
+import Loading from "./Components/Loading"
 
 
 
@@ -38,19 +39,29 @@ function App() {
     lastname: "",
     photourl: "",
   })
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
       axios
         .get(`${API}/buttons`)
-        .then((response) => setButtons(response.data))
-        .catch((e) => console.error("catch", e));
+        .then((response) => {
+          setButtons(response.data)
+          setLoading(false);
+        })
+        .catch((e) => {
+          console.error("catch", e)
+          setLoading(false)
+        });
         
         onAuthStateChanged(auth, (user) => {
           setCurrentUser(user)
         })
       }, []);
 
+      if(loading) {
+        return (<div><Loading/></div>)
+      }
 
   return (
     <div className="App">
@@ -84,7 +95,7 @@ function App() {
             <Route path="/chat" element={<ChatButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
             <Route path="/new" element={<NewButtonForm/>}/>
             {/* <Route path='/verify-email' element={<VerifyEmail setExistingUser={setExistingUser} existingUser={existingUser}/>} />  */}
-            <Route path='/profile' element={<Profile />} /> 
+            <Route path='/profile' element={<Profile loading={loading} setLoading={setLoading}/>} /> 
           </Routes>
       </AuthProvider>
       </Router>
