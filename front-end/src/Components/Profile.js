@@ -21,20 +21,20 @@ const [users, setUsers] = useState([])
     navigate('/login')
   }
 
-  if(loading){
-    return (<div><Loading/></div>)
-  }
+  // if(loading){
+  //   return (<div><Loading/></div>)
+  // }
 
   useEffect(() => {
     axios
       .get(`${API}/users`)
       .then((response) => {
         setUsers(response.data.payload)
-        setLoading(false)
+        // setLoading(false)
       })
       .catch((e) => {
         console.error("catch", e)
-        setLoading(false)
+        // setLoading(false)
       });
       
       // onAuthStateChanged(auth, (user) => {

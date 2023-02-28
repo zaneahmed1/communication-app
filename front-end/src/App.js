@@ -47,11 +47,11 @@ function App() {
         .get(`${API}/buttons`)
         .then((response) => {
           setButtons(response.data)
-          setLoading(false);
+          // setLoading(false);
         })
         .catch((e) => {
           console.error("catch", e)
-          setLoading(false)
+          // setLoading(false)
         });
         
         onAuthStateChanged(auth, (user) => {
@@ -59,9 +59,9 @@ function App() {
         })
       }, []);
 
-      if(loading) {
-        return (<div><Loading/></div>)
-      }
+      // if(loading) {
+      //   return (<div><Loading/></div>)
+      // }
 
   return (
     <div className="App">
