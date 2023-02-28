@@ -36,9 +36,9 @@ const [users, setUsers] = useState([])
 
     const image = () => {
       if(foundUser?.photourl !== ""){
-        return (<div>  <Avatar alt={foundUser?.firstname} src={foundUser?.photourl} /></div>)
+        return (<div className='profile__avatar'>  <Avatar sx={{ width: 80, height: 80 }} alt={foundUser?.firstname} src={foundUser?.photourl} /></div>)
       } else {
-        return(<div> <Avatar>{foundUser?.firstname[0]}{foundUser?.lastname[0]}</Avatar></div>)
+        return(<div className='profile__avatar'> <Avatar sx={{ width: 80, height: 80 }}>{foundUser?.firstname[0]}{foundUser?.lastname[0]}</Avatar></div>)
       }
     }
 
@@ -49,13 +49,13 @@ const [users, setUsers] = useState([])
         <div className='profile'>
           <div className='profile__container'>
             {image()}
+            <div className='profile__text'> 
           <div className='profile__title'>Welcome {foundUser?.firstname}!</div>
-          <div>First Name: {foundUser?.firstname}</div>
-          <div>Last Name: {foundUser?.lastname}</div>
-          <div>Email: {currentUser?.email}</div>
-          <div>
+          <div className='profile__detail'>First Name: {foundUser?.firstname}</div>
+          <div className='profile__detail'>Last Name: {foundUser?.lastname}</div>
+          <div className='profile__detail'>Email: {currentUser?.email}</div>
           <Button variant="contained" onClick={handleClick}>Sign Out</Button>
-          </div>
+            </div>
           </div>
         </div>
 

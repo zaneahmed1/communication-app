@@ -9,10 +9,10 @@
     background-color: #6fd5fec1;
 
     &__container{
-        width: 30%;
+    width: 30%;
     font-family: 'Roboto', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
     margin: 100px auto;
     background-color: rgba(255, 255, 255, 0.313);
@@ -21,9 +21,20 @@
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.306);
     padding: 50px 40px;
+    
+    }
+    &__avatar{
+   flex: 1;
+    }
+    &__text{
+    flex: 3;
+    }
+    &__detail{
+        padding-bottom: 20px;
     }
     &__title{
         font-weight: bold;
-        font-size: 35px;
+        font-size: 27px;
+        padding-bottom: 25px;
     }
 }
