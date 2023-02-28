@@ -1,6 +1,6 @@
-body{
-    padding:0;
-    margin:0;
+body { 
+  margin: 0; 
+    padding: 0; 
 }
 .homeButtons{
     width: 100vw;
@@ -38,4 +38,93 @@ input{
    font-size: 40px;
    border-radius: 20px;
    padding: 5px;
+}
+
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1224px) and (-webkit-min-device-pixel-ratio: 1) {
+
+    body { 
+        margin: 0; 
+          padding: 0; 
+      }
+.homeButtons{
+    background-color: #6fd5fec1;
+    display: flex;
+    display: flex;
+       flex-direction: column;
+        text-align: center;
+        
+        &__input{
+        flex: 1 9.1%;
+        padding: 2%;
+        &__clear{
+            position: absolute;
+            left: 90%;
+            width: 65px;
+        }
+    }
+
+    &__buttons{
+        flex: 1 90.9%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    
+    }
+}
+
+input{
+   width: 90%;
+   height: 100%;
+   font-size: 40px;
+   border-radius: 20px;
+   padding: 5px;
+}
+
+}
+@media only screen and (max-width: 450px){
+    body { 
+        margin: 0; 
+          padding: 0; 
+      }
+    .homeButtons{
+    background-color: #6fd5fec1;
+    display: flex;
+       flex-direction: column;
+        text-align: center;
+         overflow: scroll;
+        
+        &__input{
+        flex: 1 9.1%;
+        padding: 5%;
+        &__clear{
+            left: 80%;
+            width: 65px;
+            height: 68px;
+        }
+    }
+
+    &__buttons{
+        flex: 1 90.9%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    
+    }
+}
+
+input{
+   width: 90%;
+   height: 89%;
+   font-size: 40px;
+   border-radius: 20px;
+   padding: 5px;
+}
+
 }
