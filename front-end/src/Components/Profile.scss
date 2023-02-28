@@ -38,3 +38,39 @@
         padding-bottom: 25px;
     }
 }
+@media only screen and (max-width: 450px){
+
+    .profile {
+    
+        &__container{
+        width: 65%;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        margin: 100px auto;
+        background-color: rgba(255, 255, 255, 0.313);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.306);
+        padding: 50px 40px;
+        font-size: 14px;
+        
+        }
+        &__avatar{
+       flex: 1;
+        }
+        &__text{
+        flex: 3;
+        }
+        &__detail{
+            padding-bottom: 20px;
+        }
+        &__title{
+            font-weight: bold;
+            font-size: 20px;
+            padding-bottom: 25px;
+        }
+    }
+}
