@@ -35,16 +35,23 @@ export default function HomeButtons({buttons, searchInput, setSearchInput}) {
         <TextField fullWidth 
         value={searchInput} type="text" onChange={handleChange}
         variant="filled"
+        size="large"
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
               <Button >
-              <img src={clear} className="homeButtons__input__clear" onClick={handleClick} width="60" height="60"/>
+              <img src={clear} className="homeButtons__input__clear" onClick={handleClick} width="50" height="50"/>
               </Button>
             </InputAdornment>
           ),
         }}
+        
       />
+       {/* <div className='homeButtons__input'>
+    <input value={searchInput} type="text" onChange={handleChange}/> 
+    <img className="homeButtons__input__clear" src={clear} onClick={handleClick} width="5%" height="20.5%"/>
+
+    </div> */}
         </div>
         <div className='homeButtons__buttons'>
       {dataToDisplay.map((button) => {

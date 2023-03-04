@@ -29,7 +29,7 @@ export default function NavBar({currentUser}) {
   return (
     <div className="navBar">
       <div className="navBar__logo">
-        <img onClick={() => navigate("/")} src={logo} height="100px" />
+        <img onClick={() => navigate("/")} src={logo} height="80px" />
       </div>
       <div className="navBar__listItems">
 

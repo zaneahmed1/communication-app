@@ -8,17 +8,28 @@ body {
     background-color: #6fd5fec1;
     max-height: 100vh;
     display: flex;
-    display: flex;
+    justify-content: center;
+    align-items: center;
        flex-direction: column;
         text-align: center;
-        
         &__input{
-        flex: 1 9.1%;
-        padding: 1.5%;
-        &__clear{
-          
+            align-items: center;
+            background-color: white;
+            width: 85vw;
+            border-radius: 10px;
+            margin: 7px;
+            &__clear{
+                position: absolute;
+                // top: 0;
+                // border-radius: 20px;
+                // right: 0px;
+                // z-index: 2;
+                // border: none;
+                // top: 2px;
+                // cursor: pointer;
+
+            }
         }
-    }
 
     &__buttons{
         flex: 1 90.9%;
@@ -31,7 +42,12 @@ body {
     }
 }
 
-
+// input{
+//     margin: 10px;
+//             padding: 10px;
+//             width: 100vw;
+//     border-radius: 20px;
+//  }
 
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1224px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -42,6 +58,7 @@ body {
       }
 .homeButtons{
     background-color: #6fd5fec1;
+    width: 100%;
     display: flex;
     display: flex;
        flex-direction: column;
