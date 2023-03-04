@@ -14,10 +14,9 @@ body {
         
         &__input{
         flex: 1 9.1%;
-        padding: 2%;
+        padding: 1.5%;
         &__clear{
-            position: absolute;
-            left: 89%;
+          
         }
     }
 
@@ -32,13 +31,6 @@ body {
     }
 }
 
-input{
-   width: 90%;
-   height: 100%;
-   font-size: 40px;
-   border-radius: 20px;
-   padding: 5px;
-}
 
 
 
@@ -103,6 +95,7 @@ input{
             left: 80%;
             width: 65px;
             height: 68px;
+            position: absolute;
         }
     }
 

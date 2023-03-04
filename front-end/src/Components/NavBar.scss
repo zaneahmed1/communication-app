@@ -11,21 +11,25 @@ body {
     flex-direction: row;
     align-items: center;
     margin: 0;
+    &__listItems{
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
     &__listItem{
-        padding: 0 2.5em;
         font-size: 16px;
         cursor: pointer;
         height: 100%;
+        padding-right: 20px;
     }
 }
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.6%;
-    margin-left: 60%;
+// nav{
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-left: 100vh;
 
-}
+// }
 .dropdown{
     overflow: visible;
     position: relative;

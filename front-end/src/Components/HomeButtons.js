@@ -2,7 +2,9 @@ import React, {useState} from 'react'
 import ButtonCard from './ButtonCard'
 import "../Components/HomeButtons.scss"
 import clear from "../clearcolor.png"
-
+import TextField from '@mui/material/TextField';
+import { InputAdornment } from '@mui/material';
+import Button from '@mui/material/Button';
 
 
 export default function HomeButtons({buttons, searchInput, setSearchInput}) {
@@ -30,8 +32,19 @@ export default function HomeButtons({buttons, searchInput, setSearchInput}) {
     return (
       <div className='homeButtons'>
         <div className='homeButtons__input'>
-        <input value={searchInput} type="text" onChange={handleChange}/>  
-        <img src={clear} className="homeButtons__input__clear" onClick={handleClick} width="5%" height="10.5%"/>
+        <TextField fullWidth 
+        value={searchInput} type="text" onChange={handleChange}
+        variant="filled"
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <Button >
+              <img src={clear} className="homeButtons__input__clear" onClick={handleClick} width="60" height="60"/>
+              </Button>
+            </InputAdornment>
+          ),
+        }}
+      />
         </div>
         <div className='homeButtons__buttons'>
       {dataToDisplay.map((button) => {
