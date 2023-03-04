@@ -26,24 +26,26 @@ export default function NavBar({currentUser}) {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+
   return (
     <div className="navBar">
       <div className="navBar__logo">
-        <img onClick={() => navigate("/")} src={logo} height="100px" />
+        <img onClick={() => navigate("/")} src={logo} height="80px" />
       </div>
-      <nav>
+      <div className="navBar__listItems">
+
         <div className="navBar__listItem" onClick={() => navigate("/home")}>
-          <img src={home} height="70px" />
+          <img src={home} height="60px" />
         </div>
         <div className="navBar__listItem dropdown" onClick={handleClick}>
-          <img src={gear} height="70px" />
+          <img src={gear} height="60px" />
         {isDropdownOpen && (
           <div className="dropdown__Items">
             {currentUser?.emailVerified ? (<div> <MenuItem className="dropdown__Item" onClick={() => navigate("/profile")}>Profile</MenuItem>  <MenuItem className="dropdown__Item" onClick={handleLogout}>Logout</MenuItem> </div>) :      <MenuItem className="dropdown__Item" onClick={handleLogin}>Login</MenuItem>}
           </div>
         )}
         </div>
-      </nav>
+        </div>
     </div>
   );
 }
