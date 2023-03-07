@@ -40,7 +40,7 @@ function App() {
     photourl: "",
   })
   const [loading, setLoading] = useState(true);
-
+const [dropDownNav, setDropDownNav] = useState(false)
 
   useEffect(() => {
       axios
@@ -86,13 +86,13 @@ function App() {
             : <Navigate to='/' replace/>
           } />
 
-            <Route path="/home" element={<HomeButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
-            <Route path="/people" element={<PeopleButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/> } />
-            <Route path="/questions" element={<QuestionsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
-            <Route path="/things" element={<ThingsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
-            <Route path="/timedate" element={<TimeDateButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
-            <Route path="/actions" element={<ActionsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
-            <Route path="/chat" element={<ChatButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput}/>} />
+            <Route path="/home" element={<HomeButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>} />
+            <Route path="/people" element={<PeopleButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/> } />
+            <Route path="/questions" element={<QuestionsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>} />
+            <Route path="/things" element={<ThingsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>} />
+            <Route path="/timedate" element={<TimeDateButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>} />
+            <Route path="/actions" element={<ActionsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>} />
+            <Route path="/chat" element={<ChatButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>} />
             <Route path="/new" element={<NewButtonForm/>}/>
             {/* <Route path='/verify-email' element={<VerifyEmail setExistingUser={setExistingUser} existingUser={existingUser}/>} />  */}
             <Route path='/profile' element={<Profile loading={loading} setLoading={setLoading}/>} /> 
