@@ -41,6 +41,7 @@ function App() {
   })
   const [loading, setLoading] = useState(true);
 const [dropDownNav, setDropDownNav] = useState(false)
+const [currentPage, setCurrentPage] = useState("")
 
   useEffect(() => {
       axios
@@ -86,7 +87,7 @@ const [dropDownNav, setDropDownNav] = useState(false)
             : <Navigate to='/' replace/>
           } />
 
-            <Route path="/home" element={<HomeButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>} />
+            <Route path="/home" element={<HomeButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav} currentPage={currentPage} setCurrentPage={setCurrentPage}/> } />
             <Route path="/people" element={<PeopleButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/> } />
             <Route path="/questions" element={<QuestionsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>} />
             <Route path="/things" element={<ThingsButtons buttons={buttons} searchInput={searchInput} setSearchInput={setSearchInput} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>} />

@@ -2,6 +2,7 @@ import React from 'react'
 import ButtonCard from './ButtonCard'
 import "../Components/HomeButtons.scss"
 import clear from "../clearcolor.png"
+import PageNavigation from './PageNavigation'
 
 export default function ActionsButtons({buttons, setSearchInput, searchInput}) {
   const copy = [...buttons]
@@ -30,6 +31,9 @@ setSearchInput('');
 return (
   <div className='homeButtons'>
     <div className='homeButtons__input'>
+    <div>
+            <PageNavigation buttons={buttons} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>
+          </div>
     <input value={searchInput} type="text" onChange={handleChange}/>  
     <img src={clear} className="homeButtons__input__clear" onClick={handleClick} width="5%" height="10.5%"/>
     </div>

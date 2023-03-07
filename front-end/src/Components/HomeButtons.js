@@ -3,11 +3,25 @@ import ButtonCard from './ButtonCard'
 import "../Components/HomeButtons.scss"
 import clear from "../clearcolor.png"
 import { MenuItem } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import PageNavigation from './PageNavigation';
 
 
-export default function HomeButtons({buttons, searchInput, setSearchInput, dropDownNav, setDropDownNav}) {
+export default function HomeButtons({buttons, searchInput, setSearchInput, dropDownNav, setDropDownNav, currentPage, setCurrentPage}) {
+
   const copy = [...buttons]
+  
+
   let homeButtons =  copy.filter(button=>button.button_category === "Home")
+
+  // const handleLocation = () => {
+
+  //   if(location.pathname === "/home"){
+
+  //     return <img src= ''  alt='home' width='200px' height='200px'/>
+
+  //   } 
+  // }
   
   const handleChange = (e) => {
     setSearchInput(e.target.value);
@@ -27,19 +41,13 @@ export default function HomeButtons({buttons, searchInput, setSearchInput, dropD
       setSearchInput('');
       }
 
-      const handleNav = () => {
-        setDropDownNav(!dropDownNav);
-      };
   
     return (
       <div className='homeButtons'>
         <div className='homeButtons__input'>
-          <div onClick={handleNav}>
-          <span>yo</span>
+          <div>
+            <PageNavigation buttons={buttons} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>
           </div>
-            {dropDownNav && (
-              <div><MenuItem onClick={() => navigate("/home")}>home</MenuItem> <MenuItem onClick={() => navigate("/people")}>people</MenuItem> <MenuItem onClick={() => navigate("/questions")}>questions</MenuItem> <MenuItem onClick={() => navigate("/actions")}>actions</MenuItem> <MenuItem onClick={() => navigate("/things")}>things</MenuItem> <MenuItem onClick={() => navigate("/chat")}>chat</MenuItem> <MenuItem onClick={() => navigate("/keyboard")}>keyboard</MenuItem></div>
-            )}
     
         <input value={searchInput} type="text" onChange={handleChange}/>  
         <img src={clear} className="homeButtons__input__clear" onClick={handleClick} width="5%" height="10.5%"/>
