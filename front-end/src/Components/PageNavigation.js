@@ -26,7 +26,7 @@ export default function PageNavigation({buttons, dropDownNav, setDropDownNav}) {
     <div>
     <div onClick={handleNav}>
          {location.pathname === "/home" && <img src= {home} alt='home' width='200px' height='200px'/> }
-         {location.pathname === "/people" && <img src= {people} alt='home' width='200px' height='200px'/> }
+         {location.pathname === "/people" && <img src= {people.button_image} alt='people' width='200px' height='200px'/> }
 
     </div>
     {dropDownNav && (
