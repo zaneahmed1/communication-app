@@ -45,12 +45,13 @@ export default function HomeButtons({buttons, searchInput, setSearchInput, dropD
     return (
       <div className='homeButtons'>
         <div className='homeButtons__input'>
-          <div>
+          <div className='homeButtons__input__nav'>
             <PageNavigation buttons={buttons} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>
           </div>
-    
+      <div className='homeButtons__input__input'>
         <input value={searchInput} type="text" onChange={handleChange}/>  
         <img src={clear} className="homeButtons__input__clear" onClick={handleClick} width="5%" height="10.5%"/>
+      </div>
         </div>
         <div className='homeButtons__buttons'>
       {dataToDisplay.map((button) => {

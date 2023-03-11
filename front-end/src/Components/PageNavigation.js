@@ -52,28 +52,28 @@ export default function PageNavigation({
     <div>
       <div onClick={handleNav}>
         {location.pathname === "/home" && (
-          <img src={home} alt="home" width="200px" height="200px" />
+          <img src={home} alt="home" width="75px" height="75px" />
         )}
         {location.pathname === "/people" && (
           <img
             src={people.button_image}
             alt="people"
-            width="200px"
-            height="200px"
+            width="75px"
+            height="75px"
           />
         )}
       </div>
       {dropDownNav && (
         <div>
-          <MenuItem onClick={() => navigate("/home")}> <img src={home} width="200px" /></MenuItem>{" "}
+          <MenuItem onClick={() => navigate("/home")}> <img src={home} width="75px" /></MenuItem>{" "}
           <MenuItem onClick={() => navigate("/people")}>
-            <img src={people?.button_image} width="200px" />
+            <img src={people?.button_image} width="75px" />
           </MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/questions")}> <img src={questions?.button_image} width="200px" /></MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/actions")}> <img src={actions?.button_image} width="200px" /></MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/things")}> <img src={things?.button_image} width="200px" /></MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/chat")}> <img src={chat?.button_image} width="200px" /></MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/timedate")}> <img src={timedate?.button_image} width="200px" /></MenuItem>
+          <MenuItem onClick={() => navigate("/questions")}> <img src={questions?.button_image} width="75px" /></MenuItem>{" "}
+          <MenuItem onClick={() => navigate("/actions")}> <img src={actions?.button_image} width="75px" /></MenuItem>{" "}
+          <MenuItem onClick={() => navigate("/things")}> <img src={things?.button_image} width="75px" /></MenuItem>{" "}
+          <MenuItem onClick={() => navigate("/chat")}> <img src={chat?.button_image} width="75px" /></MenuItem>{" "}
+          <MenuItem onClick={() => navigate("/timedate")}> <img src={timedate?.button_image} width="75px" /></MenuItem>
         </div>
       )}
     </div>
