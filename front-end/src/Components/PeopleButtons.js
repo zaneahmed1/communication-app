@@ -31,7 +31,7 @@ setSearchInput('');
 return (
   <div className='homeButtons'>
     <div className='homeButtons__input'>
-    <div>
+    <div className='homeButtons__input__nav'>
             <PageNavigation buttons={buttons} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>
           </div>
     <input value={searchInput} type="text" onChange={handleChange}/>  

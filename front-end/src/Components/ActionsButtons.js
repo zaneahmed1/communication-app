@@ -4,7 +4,7 @@ import "../Components/HomeButtons.scss"
 import clear from "../clearcolor.png"
 import PageNavigation from './PageNavigation'
 
-export default function ActionsButtons({buttons, setSearchInput, searchInput}) {
+export default function ActionsButtons({buttons, setSearchInput, searchInput, dropDownNav, setDropDownNav}) {
   const copy = [...buttons]
   let actionsButtons =  copy.filter(button=>button.button_category === "Actions")
 
@@ -31,7 +31,7 @@ setSearchInput('');
 return (
   <div className='homeButtons'>
     <div className='homeButtons__input'>
-    <div>
+    <div className='homeButtons__input__nav'>
             <PageNavigation buttons={buttons} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>
           </div>
     <input value={searchInput} type="text" onChange={handleChange}/>  

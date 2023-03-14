@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import PageNavigation from './PageNavigation';
 
 
-export default function HomeButtons({buttons, searchInput, setSearchInput, dropDownNav, setDropDownNav, currentPage, setCurrentPage}) {
+export default function HomeButtons({buttons, searchInput, setSearchInput, dropDownNav, setDropDownNav}) {
 
   const copy = [...buttons]
   

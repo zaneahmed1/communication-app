@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import home from "../home.png";
 import { MenuItem } from "@mui/material";
+import "../Components/PageNavigation.scss"
 
 export default function PageNavigation({
   buttons,
@@ -50,7 +51,10 @@ export default function PageNavigation({
 
   return (
     <div>
-      <div onClick={handleNav}>
+    <div className="text">
+    You are here: 
+    </div>
+      <div onClick={handleNav} className="dropdownNav">
         {location.pathname === "/home" && (
           <img src={home} alt="home" width="75px" height="75px" />
         )}
@@ -62,18 +66,58 @@ export default function PageNavigation({
             height="75px"
           />
         )}
+         {location.pathname === "/actions" && (
+          <img
+            src={actions.button_image}
+            alt="actions"
+            width="75px"
+            height="75px"
+          />
+        )}
+         {location.pathname === "/chat" && (
+          <img
+            src={chat.button_image}
+            alt="chat"
+            width="75px"
+            height="75px"
+          />
+        )}
+         {location.pathname === "/questions" && (
+          <img
+            src={questions.button_image}
+            alt="questions"
+            width="75px"
+            height="75px"
+          />
+        )}
+         {location.pathname === "/things" && (
+          <img
+            src={things.button_image}
+            alt="things"
+            width="75px"
+            height="75px"
+          />
+        )}
+         {location.pathname === "/timedate" && (
+          <img
+            src={timedate.button_image}
+            alt="timedate"
+            width="75px"
+            height="75px"
+          />
+        )}
       </div>
       {dropDownNav && (
-        <div>
-          <MenuItem onClick={() => navigate("/home")}> <img src={home} width="75px" /></MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/people")}>
-            <img src={people?.button_image} width="75px" />
+        <div className="dropdownNav__menu">
+          <MenuItem  className="dropdownNav__item" onClick={() => navigate("/home")}> <img src={home} width="60px" /></MenuItem>{" "}
+          <MenuItem className="dropdownNav__item" onClick={() => navigate("/people")}>
+            <img src={people?.button_image} width="60px" />
           </MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/questions")}> <img src={questions?.button_image} width="75px" /></MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/actions")}> <img src={actions?.button_image} width="75px" /></MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/things")}> <img src={things?.button_image} width="75px" /></MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/chat")}> <img src={chat?.button_image} width="75px" /></MenuItem>{" "}
-          <MenuItem onClick={() => navigate("/timedate")}> <img src={timedate?.button_image} width="75px" /></MenuItem>
+          <MenuItem className="dropdownNav__item" onClick={() => navigate("/questions")}> <img src={questions?.button_image} width="60px" /></MenuItem>{" "}
+          <MenuItem className="dropdownNav__item" onClick={() => navigate("/actions")}> <img src={actions?.button_image} width="60px" /></MenuItem>{" "}
+          <MenuItem className="dropdownNav__item" onClick={() => navigate("/things")}> <img src={things?.button_image} width="60px" /></MenuItem>{" "}
+          <MenuItem className="dropdownNav__item" onClick={() => navigate("/chat")}> <img src={chat?.button_image} width="60px" /></MenuItem>{" "}
+          <MenuItem className="dropdownNav__item" onClick={() => navigate("/timedate")}> <img src={timedate?.button_image} width="60px" /></MenuItem>
         </div>
       )}
     </div>
