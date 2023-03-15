@@ -8,29 +8,33 @@ body {
     background-color: #6fd5fec1;
     max-height: 100vh;
     display: flex;
-    display: flex;
        flex-direction: column;
         text-align: center;
         
         &__input{
-        flex: 1 9.1%;
-        padding: 2%; 
+        height: 5%;
+        flex: 1 ;
         display: flex;
         flex-direction: row;
+
         &__clear{
-            position: absolute;
-            left: 89%;
+            flex: 1;
+            margin-left: auto;
+            padding:10px;
+        }
+        &__search{
+            flex: 6;
+            padding:10px;
         }
         &__nav{
-            flex: 1
-        }
-        &__input{
-            flex: 4
+            flex: 1;
+            padding:10px;
         }
     }
 
     &__buttons{
-        flex: 1 90.9%;
+        padding-top: 20px;
+        flex: 6 ;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -41,12 +45,12 @@ body {
 }
 
 input{
-   width: 90%;
    height: 100%;
-   font-size: 40px;
+   font-size: 30px;
    border-radius: 20px;
-   padding: 5px;
+   width: 100%;
 }
+
 
 
 

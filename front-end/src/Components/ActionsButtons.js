@@ -34,8 +34,12 @@ return (
     <div className='homeButtons__input__nav'>
             <PageNavigation buttons={buttons} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>
           </div>
+          <div className='homeButtons__input__search'>
     <input value={searchInput} type="text" onChange={handleChange}/>  
-    <img src={clear} className="homeButtons__input__clear" onClick={handleClick} width="5%" height="10.5%"/>
+          </div>
+          <div className="homeButtons__input__clear">
+    <img src={clear}  onClick={handleClick}  height="100%"/>
+          </div>
     </div>
     <div className='homeButtons__buttons'>
   {dataToDisplay.map((button) => {
