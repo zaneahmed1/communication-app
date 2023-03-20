@@ -1,19 +1,29 @@
+.pageNavigation{
+}
 .dropdownNav {
     position: relative;
     z-index: 10;
+    display: grid;
+    grid-template-columns: auto;
     
     &__menu {
         position: absolute;
         max-height: 0px;
+       &__content{
+        background-color: rgba(255, 255, 255, 0.846);
+        
+           
+       }
+
     }
-    &__item{
-          }
+  
     
 
 }
 .text{
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
+    text-align: left;
 }
 
 

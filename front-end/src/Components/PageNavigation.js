@@ -50,11 +50,11 @@ export default function PageNavigation({
   };
 
   return (
-    <div>
+    <div className="pageNavigation">
+      <div onClick={handleNav} className="dropdownNav">
     <div className="text">
     You are here: 
     </div>
-      <div onClick={handleNav} className="dropdownNav">
         {location.pathname === "/home" && (
           <img src={home} alt="home" width="75px" height="75px" />
         )}
@@ -64,6 +64,7 @@ export default function PageNavigation({
             alt="people"
             width="75px"
             height="75px"
+
           />
         )}
          {location.pathname === "/actions" && (
@@ -109,6 +110,7 @@ export default function PageNavigation({
       </div>
       {dropDownNav && (
         <div className="dropdownNav__menu">
+          <div className="dropdownNav__menu__content">
           <MenuItem  className="dropdownNav__item" onClick={() => navigate("/home")}> <img src={home} width="60px" /></MenuItem>{" "}
           <MenuItem className="dropdownNav__item" onClick={() => navigate("/people")}>
             <img src={people?.button_image} width="60px" />
@@ -118,6 +120,7 @@ export default function PageNavigation({
           <MenuItem className="dropdownNav__item" onClick={() => navigate("/things")}> <img src={things?.button_image} width="60px" /></MenuItem>{" "}
           <MenuItem className="dropdownNav__item" onClick={() => navigate("/chat")}> <img src={chat?.button_image} width="60px" /></MenuItem>{" "}
           <MenuItem className="dropdownNav__item" onClick={() => navigate("/timedate")}> <img src={timedate?.button_image} width="60px" /></MenuItem>
+          </div>
         </div>
       )}
     </div>

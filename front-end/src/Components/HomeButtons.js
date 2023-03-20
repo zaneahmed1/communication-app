@@ -45,8 +45,10 @@ export default function HomeButtons({buttons, searchInput, setSearchInput, dropD
         <div className='homeButtons'>
           <div className='homeButtons__input'>
           <div className='homeButtons__input__nav'>
+          
                   <PageNavigation buttons={buttons} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>
                 </div>
+           
                 <div className='homeButtons__input__search'>
           <input value={searchInput} type="text" onChange={handleChange}/>  
                 </div>
