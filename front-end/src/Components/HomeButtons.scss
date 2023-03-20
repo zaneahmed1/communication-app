@@ -12,7 +12,7 @@ body {
         text-align: center;
         
         &__input{
-        height: 5%;
+        height: 10%;
         flex: 1 ;
         display: flex;
         flex-direction: row;
@@ -20,15 +20,16 @@ body {
         &__clear{
             flex: 1;
             margin-left: auto;
-            padding:10px;
+            padding: 10px;
+
         }
         &__search{
             flex: 6;
-            padding:10px;
+            padding: 10px;
         }
         &__nav{
             flex: 1;
-            padding:10px;
+            padding: 10px;
         }
     }
 
@@ -67,36 +68,46 @@ input{
        flex-direction: column;
         text-align: center;
         
+             
         &__input{
-        flex: 1 9.1%;
-        padding: 2%;
-        &__clear{
-            position: absolute;
-            left: 90%;
-            width: 65px;
+            height: 10%;
+            flex: 1 ;
+            display: flex;
+            flex-direction: row;
+    
+            &__clear{
+                flex: 1;
+                margin-left: auto;
+            }
+            &__search{
+                flex: 6;
+            }
+            &__nav{
+                flex: 1;
+    
+            }
+        }
+    
+        &__buttons{
+            padding-top: 20px;
+            flex: 6 ;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        
         }
     }
-
-    &__buttons{
-        flex: 1 90.9%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
     
+    input{
+       height: 100%;
+       font-size: 30px;
+       border-radius: 20px;
+       width: 100%;
     }
-}
-
-input{
-   width: 90%;
-   height: 100%;
-   font-size: 40px;
-   border-radius: 20px;
-   padding: 5px;
-}
-
-}
+    
+}    
 @media only screen and (max-width: 450px){
     body { 
        width: 100%;
@@ -108,34 +119,44 @@ input{
         text-align: center;
          overflow: scroll;
         
-        &__input{
-        flex: 1 9.1%;
-        padding: 5%;
-        &__clear{
-            left: 80%;
-            width: 65px;
-            height: 68px;
+            
+         &__input{
+            height: 5%;
+            flex: 1 ;
+            display: flex;
+            flex-direction: row;
+    
+            &__clear{
+                flex: 1;
+                margin-left: auto;
+            }
+            &__search{
+                flex: 6;
+            }
+            &__nav{
+                flex: 1;
+    
+            }
+        }
+    
+        &__buttons{
+            padding-top: 20px;
+            flex: 6 ;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        
         }
     }
-
-    &__buttons{
-        flex: 1 90.9%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
     
+    input{
+       height: 100%;
+       font-size: 30px;
+       border-radius: 20px;
+       width: 100%;
     }
-}
-
-input{
-   width: 90%;
-   height: 89%;
-   font-size: 40px;
-   border-radius: 20px;
-   padding: 5px;
-}
+    
 
 }
