@@ -48,18 +48,20 @@ export default function HomeButtons({buttons, searchInput, setSearchInput, dropD
           
                   <PageNavigation buttons={buttons} dropDownNav={dropDownNav} setDropDownNav={setDropDownNav}/>
                 </div>
-           
+           <div className='homeButtons__input__searchWrapper'>
+
                 <div className='homeButtons__input__search'>
-          <input value={searchInput} type="text" onChange={handleChange}/>  
-                </div>
-                <div className="homeButtons__input__clear">
-          <img src={clear}  onClick={handleClick}  height="100%"/>
-                </div>
-          </div>
-          <div className='homeButtons__buttons'>
+                  <input value={searchInput} type="text" onChange={handleChange}/>  
+                <div className='homeButtons__buttons'>
         {dataToDisplay.map((button) => {
           return <ButtonCard key={button.id} button={button} setSearchInput={setSearchInput}/>
         })}
+          </div>
+        </div>
+                </div>
+                <div className="homeButtons__input__clear">
+          <img src={clear}  onClick={handleClick}  height="100vh"/>
+                </div>
           </div>
         </div>
       )

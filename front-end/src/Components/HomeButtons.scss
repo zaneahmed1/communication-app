@@ -6,42 +6,45 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #6fd5fec1;
-    max-height: 100vh;
     display: flex;
        flex-direction: column;
         text-align: center;
-        
         &__input{
+        padding-top: 2vh;
         height: 10%;
-        flex: 1 ;
         display: flex;
         flex-direction: row;
-
+        
         &__clear{
             flex: 1;
             margin-left: auto;
-            padding: 10px;
+            padding: 20px;
 
         }
+        &__searchWrapper{
+            flex: 10;
+            display: flex;
+            flex-direction: column;
+        }
         &__search{
-            flex: 6;
-            padding: 10px;
+            max-height: 100px;
+            padding: 20px;
         }
         &__nav{
             flex: 1;
-            padding: 10px;
+            padding: 20px;
+            margin-left: 3vw;
         }
     }
 
     &__buttons{
-        padding-top: 20px;
-        flex: 6 ;
+        padding-top: 5vh;
+        flex: 1 ;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-    
+        gap: 15px;
     }
 }
 
@@ -63,7 +66,6 @@ input{
       }
 .homeButtons{
     background-color: #6fd5fec1;
-    display: flex;
     display: flex;
        flex-direction: column;
         text-align: center;
@@ -87,7 +89,6 @@ input{
     
             }
         }
-    
         &__buttons{
             padding-top: 20px;
             flex: 6 ;
