@@ -6,10 +6,10 @@ Live Site: https://touchtalk.netlify.app/
 TouchTalk is an augmentative and alternative communication (AAC) app. AAC is a set of tools use to supplement or support speech and writing for people with communication impairments. TouchTalk uses picture symbols to help individuals who have difficulty speaking or writing, due to conditions such as cerebral palsy, autism, aphasia, or other disabilities, to express themselves, communicate their needs and preferences helping them become more independent.  The goal of this app is to provide these individuals with the means to communicate effectively and to enhance their quality of life.
 
 ## Features
--Implementation of Text-to-Speech technology 
--User authentication and authorization
--Customizable user settings and preferences
--Responsive design for mobile, tablet and desktop devices
+- Implementation of Text-to-Speech technology 
+- User authentication and authorization
+- Customizable user settings and preferences
+- Responsive design for mobile, tablet and desktop devices
 
 ## Technologies 
 - React
